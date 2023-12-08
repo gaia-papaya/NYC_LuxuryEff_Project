@@ -1,0 +1,8 @@
+Hey! this is the Rdata folder, which contains all of the data for the Luxury Effect project. 
+
+the GIS folder contains all of the GIS layers/files used in the analyses
+
+the output folder contains all of the data tables/files written by our R code
+
+Feel free to update this document as you go along with notes, key detail, and comments which you think might help your fellow programmers
+UwU happy coding!

@@ -1,0 +1,1 @@
+Hey! this is the R markdown file for the Luxury effect project. Feel free to use this as a notebook where to take notes/write and make some cool plots/code! HOWEVER, try not to fit all your code in here, it helps your fellow programmers better understand your workflow if its compartmentalized :3
