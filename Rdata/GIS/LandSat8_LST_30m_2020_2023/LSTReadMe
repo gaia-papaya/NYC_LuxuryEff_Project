@@ -1,0 +1,9 @@
+These files were compiled from LandSat8 using javascript files in Google Earth Engine users/valaasam/LuxuryEffectNYC (https://code.earthengine.google.com/6770a570fc89350cc56f689f6fc5208e)
+
+Scripts were adapted from here: https://github.com/NewYorkCityCouncil/heat_map/blob/main/README.md
+
+Rasters were clipped to NYC boundaries of Manhattan, Bronx, New York (which is Manhattan and Brooklyn, looks like), Richmond, Rockland, and Queens. Westchester also included but clipped as a separate file because it was too complex of a shape.  
+
+Files contain per pixel summaries of land surface temperature mean, median, min, and max over winter (months Dec-Feb) and summer (months June-Aug). 
+
+ 
