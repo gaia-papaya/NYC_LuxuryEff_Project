@@ -1,0 +1,17 @@
+<PAMDataset>
+  <Metadata>
+    <MDI key="DataType">Generic</MDI>
+  </Metadata>
+  <PAMRasterBand band="1">
+    <Description>PMaa12300m</Description>
+    <Metadata>
+      <MDI key="BandName">PMaa12300m</MDI>
+      <MDI key="RepresentationType">ATHEMATIC</MDI>
+      <MDI key="STATISTICS_MAXIMUM">6.3481583595276</MDI>
+      <MDI key="STATISTICS_MEAN">6.248016166687</MDI>
+      <MDI key="STATISTICS_MINIMUM">6.154999256134</MDI>
+      <MDI key="STATISTICS_STDDEV">0.078417701907767</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">83.33</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>
