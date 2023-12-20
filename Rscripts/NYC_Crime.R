@@ -11,7 +11,7 @@ library(readxl)
 ###################################.
 
 
-setwd("~/Documents/Projects/LuxuryNYC/Analysis/Crime_files")
+setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/Crime_files")
 
 #Get the shapefile names from the shapefile folder
 crime_list <- list.files(pattern="\\.xlsx")  #folder with all files is named "Files"
@@ -50,7 +50,7 @@ crime_data <- data.table::rbindlist(outlist)
 #######################################.
 
 #read in data
-crime <- read_csv("~/Documents/Projects/LuxuryNYC/Analysis/Crime_files/crimeNYC_21_23.csv")
+crime <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/Crime_files/crimeNYC_21_23.csv")
 
 
 park_crime <- crime_data[which(PARK=="PELHAM BAY PARK" | 
@@ -70,11 +70,19 @@ park_crime$PARK <- str_to_title(park_crime$PARK) #change case of park names
 colnames(park_crime) <- str_to_title(colnames(park_crime)) #change case of column names
 colnames(park_crime)[3] <- "Acres"
 
+park_crime$Park[which(park_crime$Park=="Highbridge Park Manhattan Side")] <- "Highbridge"
+park_crime$Park[which(park_crime$Park=="Crotona Park")]<-"Crotona"
+park_crime$Park[which(park_crime$Park=="Inwood Hill Park")]<-"Inwood"
+park_crime$Park[which(park_crime$Park=="Soundview Park")]<-"Soundview"
+park_crime$Park[which(park_crime$Park=="Van Cortlandt Park")]<-"VanCortlandt"
+park_crime$Park[which(park_crime$Park=="Morningside Park")]<-"Morningside"
+park_crime$Park[which(park_crime$Park=="Pelham Bay Park")]<-"PelhamBay"
+
 
 park_crime_21_23 <- park_crime %>% group_by(Park, Borough, Acres) %>%
   summarise(murder = sum(Murder), robbery=sum(Robbery), assault=sum(`Felony Assault`), 
             burglary=sum(Burglary), larcen=sum(`Grand Larceny`), larcen_motor=sum(`Grand Larceny Of Motor Vehicle`),
-            total=sum(Total))
+            crime_total=sum(Total))
 
 #make long
 park_crime_21_23_long <- park_crime_21_23  %>%
@@ -84,11 +92,33 @@ park_crime_21_23_long <- park_crime_21_23 %>%
   pivot_longer(
     cols = c("murder","robbery","assault","burglary","larcen","larcen_motor"), 
     names_to = c("Crime"),  # Create two new columns for Variable and Year
-    values_to = ("N")  # Name for the new column with values
+    values_to = ("N_crime")  # Name for the new column with values
   )
 
 #Add crime per acre
-park_crime_21_23_long$total_per_acre <- park_crime_21_23_long$total/park_crime_21_23_long$Acres
+park_crime_21_23_long$crime_per_acre <- park_crime_21_23_long$crime_total/park_crime_21_23_long$Acres
+
+#Add SVI
+cencus_data <- read.csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/SVI_df.csv")
+    #merge park names
+    unique(park_crime_21_23_long$Park)
+    unique(cencus_data$park) 
+    colnames(cencus_data)[4] <- "Park"
+    cencus_data$Park[which(cencus_data$Park=="HighbridgeMAN")]<-"Highbridge"
+    cencus_data$Park[which(cencus_data$Park=="Pelham")]<-"PelhamBay"
+    cencus_data$Park[which(cencus_data$Park=="Vancortlandt")]<-"VanCortlandt"
+cencus_data_summary<-cencus_data %>% group_by(Park) %>%
+  summarise(SVI=mean(SVI), SocioEco=mean(SocioEco), Minority=mean(Minority))
+    
+
+park_crime_21_23_long <- left_join(park_crime_21_23_long, cencus_data_summary,  by = c("Park"))
+#remove highbridge bronx
+park_crime_21_23_long2<-subset(park_crime_21_23_long, Park!="Highbridge Park Bronx Side")
+
+###################.
+####   PLOTS   ####
+###################.
+
 
 
 #total crime
@@ -101,7 +131,7 @@ ggplot(data=park_crime_21_23_long, aes(x=reorder(Park, total), y=total)) +
   xlab("")+
   theme_classic()
 
-#total crime
+#crime adjusted for size 
 ggplot(data=park_crime_21_23_long, aes(x=reorder(Park, total_per_acre), y=total_per_acre)) + 
   geom_bar(stat='identity')+
   # stat_summary(fun.data = "mean_sdl",  fun.args = list(mult = 1), 
@@ -111,6 +141,27 @@ ggplot(data=park_crime_21_23_long, aes(x=reorder(Park, total_per_acre), y=total_
   xlab("")+
   theme_classic()
 
+#crime adjusted for size  (removing highbridge bronx)
+park_crime_21_23_long2<-subset(park_crime_21_23_long, Park!="Highbridge Park Bronx Side")
+ggplot(data=park_crime_21_23_long2, aes(x=reorder(Park, total_per_acre), y=total_per_acre)) + 
+  geom_bar(stat='identity')+
+  # stat_summary(fun.data = "mean_sdl",  fun.args = list(mult = 1), 
+  #               geom = "pointrange", color = "black") +
+  scale_x_discrete(guide = guide_axis(angle = 45))+
+  ylab("Crime Per Acre 2021-2023") +
+  xlab("")+
+  theme_classic()
+
+
+#total crime (removing highbridge bronx)
+ggplot(data=park_crime_21_23_long2, aes(x=reorder(Park, total), y=total)) + 
+  geom_bar(stat='identity')+
+  # stat_summary(fun.data = "mean_sdl",  fun.args = list(mult = 1), 
+  #               geom = "pointrange", color = "black") +
+  scale_x_discrete(guide = guide_axis(angle = 45))+
+  ylab("Total Crime 2021-2023") +
+  xlab("")+
+  theme_classic()
 
 colors<-c("#fef0d9", "#fdd49e",  "#fdbb84", "#fc8d59", "#e34a33", "#b30000")
   
@@ -122,5 +173,19 @@ ggplot(data=park_crime_21_23_long, aes(x=reorder(Park, N, FUN=sum), y=N, fill=Cr
   ylab("Crime 2021-2023") +
   guides(fill = guide_legend(title = "Crime Type"))+
   xlab("")+
+  theme_classic()
+
+
+# CRIME X SVI
+
+park_crime_21_23_long2 %>% group_by(Park, SVI, SocioEco, Minority, crime_per_acre, N_crime, crime_total, Acres) %>%
+
+ggplot(aes(x=SVI, y=crime_per_acre)) + 
+  geom_point(aes(x=SVI, y=crime_total))+
+  # stat_summary(fun.data = "mean_sdl",  fun.args = list(mult = 1), 
+  #               geom = "pointrange", color = "black") +
+#  scale_x_discrete(guide = guide_axis(angle = 45))+
+  ylab("Total Crime 2021-2023") +
+ # xlab("")+
   theme_classic()
 

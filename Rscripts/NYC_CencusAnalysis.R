@@ -16,7 +16,7 @@ library(tidyverse)
 ####################################.
 
 #Set wd to whatever folder contains the folder that contains the shape files
-setwd("~/Documents/GIS/NY/Buffers/Differences_750m")
+setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Buffers/Differences_750m")
 #setwd("~/Documents/GIS/NY/ParkShapeFiles_Raf2")
 
 #Get the shapefile names from the shapefile folder
@@ -42,7 +42,7 @@ shape_file_names <- shape_file_names %>%
 #### _Social Vulnerabilty Index  ####
 
 #import the raster
-ras <- raster("~/Documents/GIS/NY/Rasters/SVI-2018-nad83-geotiff/svi_2018_tract_overall_nad83_nopop.tif")
+ras <- raster("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Rasters/SVI-2018-nad83-geotiff/svi_2018_tract_overall_nad83_nopop.tif")
 
 #this is the distance you want to buffer
 buff_dist <- 500 
@@ -88,7 +88,7 @@ SVI_df <- data.table::rbindlist(outlist)
 #### _Income ####
 
 #import the raster
-ras <- raster("~/Documents/GIS/NY/Rasters/SVI-2018-nad83-geotiff/svi_2018_tract_socioeconomic_nad83_nopop.tif")
+ras <- raster("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Rasters/SVI-2018-nad83-geotiff/svi_2018_tract_socioeconomic_nad83_nopop.tif")
 
 #this is the distance you want to buffer
 buff_dist <- 500 
@@ -137,7 +137,7 @@ SocioEco_df <- data.table::rbindlist(outlist)
 #### _Income ####
 
 #import the raster
-ras <- raster("~/Documents/GIS/NY/Rasters/SVI-2018-nad83-geotiff/svi_2018_tract_minority_nad83_nopop.tif")
+ras <- raster("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Rasters/SVI-2018-nad83-geotiff/svi_2018_tract_minority_nad83_nopop.tif")
 
 #this is the distance you want to buffer
 buff_dist <- 500 
@@ -188,7 +188,7 @@ cencus_data <- SVI_df
 cencus_data <- left_join(cencus_data, SocioEco_df,  by = c("x", "y", "park"))
 cencus_data <- left_join(cencus_data, Minority_df,  by = c("x", "y", "park"))
 
-write_csv(cencus_data, "~/Documents/Projects/LuxuryNYC/Analysis/SCI_df.csv")
+write_csv(cencus_data, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/SVI_df.csv")
 
 ###############.
 #### Plots ####

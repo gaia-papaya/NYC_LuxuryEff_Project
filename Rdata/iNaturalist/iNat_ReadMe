@@ -1,0 +1,101 @@
+Data extracted from iNaturalist Jan 1, 2019 through Dec 20, 2023. Filter for Research grade observations
+
+
+qquality_grade=research&identifications=any&iconic_taxa%5B%5D=Aves&iconic_taxa%5B%5D=Reptilia&iconic_taxa%5B%5D=Amphibia&iconic_taxa%5B%5D=Arachnida&iconic_taxa%5B%5D=Insecta&iconic_taxa%5B%5D=Plantae&place_id=125416&verifiable=true&d1=2019-01-01&d2=2023-12-20&spam=false
+
+https://www.inaturalist.org/observations/export?verifiable=true&page=1&spam=false&d1=2019-01-01&iconic_taxa%5B%5D=Aves&iconic_taxa%5B%5D=Amphibia&iconic_taxa%5B%5D=Reptilia&iconic_taxa%5B%5D=Plantae&iconic_taxa%5B%5D=Insecta&iconic_taxa%5B%5D=Arachnida&place_id=125429&user_id=&project_id=&swlng=&swlat=&nelng=&nelat=&lat=&lng=&radius=&q=&d2=2023-12-20
+
+
+
+
+Query quality_grade=any&identifications=any&iconic_taxa[]=Aves&iconic_taxa[]=Reptilia&iconic_taxa[]=Amphibia&iconic_taxa[]=Arachnida&iconic_taxa[]=Insecta&iconic_taxa[]=Plantae&place_id=125429&verifiable=true&d1=2019-01-01&spam=false
+Columns id, observed_on_string, observed_on, time_observed_at, time_zone, user_id, user_login, user_name, created_at, updated_at, quality_grade, license, url, image_url, sound_url, tag_list, description, num_identification_agreements, num_identification_disagreements, captive_cultivated, oauth_application_id, place_guess, latitude, longitude, positional_accuracy, private_place_guess, private_latitude, private_longitude, public_positional_accuracy, geoprivacy, taxon_geoprivacy, coordinates_obscured, positioning_method, positioning_device, species_guess, scientific_name, common_name, iconic_taxon_name, taxon_id
+
+1 Create a Query
+Create an observation query just like you would elsewhere on the site. You can also cut and paste an observations URL from another part of the site. Your query should return no more than 200,000 observations.
+
+Choose query parameters below or paste in an observations URL
+No matching observations.2 Preview
+Icon	Photos / Sounds	Species / Taxon Name	Observer	
+Date observed
+Place	Actions
+3 Choose columns
+Choose the columns you want to export
+
+Basic (All | None)
+ id
+ observed_on_string
+ observed_on
+ time_observed_at
+ time_zone
+ user_id
+ user_login
+ user_name
+ created_at
+ updated_at
+ quality_grade
+ license
+ url
+ image_url
+ sound_url
+ tag_list
+ description
+ num_identification_agreements
+ num_identification_disagreements
+ captive_cultivated
+ oauth_application_id
+Geo (All | None)
+Town, county, state, country fields based on coordinates. Analagous administrative levels will be used for observations where these place types do not apply. The private_* fields will only be included when using the user filter and you are the user, or when using the project filter and you curate the project.
+
+ place_guess
+ latitude
+ longitude
+ positional_accuracy
+ private_place_guess
+ private_latitude
+ private_longitude
+ public_positional_accuracy
+ geoprivacy
+ taxon_geoprivacy
+ coordinates_obscured
+ positioning_method
+ positioning_device
+ place_town_name
+ place_county_name
+ place_state_name
+ place_country_name
+ place_admin1_name
+ place_admin2_name
+Taxon (All | None)
+ species_guess
+ scientific_name
+ common_name
+ iconic_taxon_name
+ taxon_id
+Taxon Extras (All | None)
+Note: these columns will slow down the generation of your export
+
+ taxon_kingdom_name
+ taxon_phylum_name
+ taxon_subphylum_name
+ taxon_superclass_name
+ taxon_class_name
+ taxon_subclass_name
+ taxon_superorder_name
+ taxon_order_name
+ taxon_suborder_name
+ taxon_superfamily_name
+ taxon_family_name
+ taxon_subfamily_name
+ taxon_supertribe_name
+ taxon_tribe_name
+ taxon_subtribe_name
+ taxon_genus_name
+ taxon_genushybrid_name
+ taxon_species_name
+ taxon_hybrid_name
+ taxon_subspecies_name
+ taxon_variety_name
+ taxon_form_name
+Observation Fields (All | None)
+4 
