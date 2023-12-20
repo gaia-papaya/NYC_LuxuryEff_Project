@@ -10,7 +10,7 @@ AQ_files <- list.files("Rdata/AQ data")
 AQ_data_list <- list()
 for(f in AQ_files){
   #extract site name from AQ_files
-  site_name <- stringr::str_extract(f, "(?<=[:digit:]{4}-[:digit:]{2}-[:digit:]{2}[:space:]).*(?=.csv)")
+  site_name <- str_remove(stringr::str_extract(f, "(?<=[:digit:]{4}-[:digit:]{2}-[:digit:]{2}[:space:]).*(?=.csv)"), " ")
   #read csv of given file name (f)
   AQ_data_list[[f]] <- as.data.table(read.csv(paste("Rdata/AQ data/",f, sep = ""), header = T))
   #add site name to given table
