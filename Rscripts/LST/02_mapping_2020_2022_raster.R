@@ -113,7 +113,7 @@ writeRaster(max_winter_deviation, "Rdata/output/LST/max_winter_deviation_f",
 
 
 ################################################################################
-# create plot 
+# create map 
 ################################################################################
 
 # capping the outliers ---------------------------------------------------------
@@ -163,7 +163,7 @@ mapshot(map, file = file.path("Rdata/output/LST/visuals", "mean_summer_heat_devi
 
 
 ################################################################################
-# smoothed plot - 1.5 block average
+# smoothed map - 1.5 block average
 ################################################################################
 #SUMMER MEAN
 
@@ -248,4 +248,5 @@ mapshot(map,
         file = file.path("Rdata/output/LST/visuals", "mean_winter_heat_smoothed_deviation_raster.png"),
         remove_controls = c("homeButton", "layersControl"), vwidth = 1000, vheight = 850)
           
+
 
