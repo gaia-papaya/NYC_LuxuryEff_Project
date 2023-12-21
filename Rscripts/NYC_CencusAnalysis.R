@@ -17,7 +17,7 @@ library(tidyverse)
 
 #Set wd to whatever folder contains the folder that contains the shape files
 setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Buffers/Differences_750m")
-#setwd("~/Documents/GIS/NY/ParkShapeFiles_Raf2")
+#setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/ParkShapeFiles_Raf2")
 
 #Get the shapefile names from the shapefile folder
 shapefile_list <- list.files(pattern="\\.shp")  #folder with all files is named "Files"
