@@ -17,7 +17,7 @@ library(tidyverse)
 
 #Set wd to whatever folder contains the folder that contains the shape files
 #setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Buffers/Differences/EPSG_5070")
-setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Buffers/ParkShapeFiles_Raf2")
+setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/ParkShapeFiles_Raf2")
 
 #Get the shapefile names from the shapefile folder
 shapefile_list <- list.files(pattern="\\.shp")  #folder with all files is named "Files"
@@ -36,7 +36,7 @@ shape_file_names <- shape_file_names %>%
 #### _Particulate Matter (2.5) 2019  ####
 
 #import the raster
-ras <- raster("~/Documents/GIS/NY/Rasters/AQI/AnnAvg1_13_300mRaster/aa12_pm300m/prj.adf")
+ras <- raster("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Rasters/AQI/AnnAvg1_13_300mRaster/aa12_pm300m/prj.adf")
 
 #this is the distance you want to buffer
 buff_dist <- 500 
@@ -84,7 +84,7 @@ PM_df <- data.table::rbindlist(outlist)
 #### _Black Carbon 2019  ####
 
 #import the raster
-ras <- raster("~/Documents/GIS/NY/Rasters/AQI/AnnAvg1_13_300mRaster/aa12_bc300m/prj.adf")
+ras <- raster("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Rasters/AQI/AnnAvg1_13_300mRaster/aa12_bc300m/prj.adf")
 
 #this is the distance you want to buffer
 buff_dist <- 500 
@@ -132,7 +132,7 @@ BC_df <- data.table::rbindlist(outlist)
 #### _Nitrous Oxide (NO) 2019  ####
 
 #import the raster
-ras <- raster("~/Documents/GIS/NY/Rasters/AQI/AnnAvg1_13_300mRaster/aa12_no300m/prj.adf")
+ras <- raster("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Rasters/AQI/AnnAvg1_13_300mRaster/aa12_no300m/prj.adf")
 
 #this is the distance you want to buffer
 buff_dist <- 500 
@@ -181,7 +181,7 @@ NO_df <- data.table::rbindlist(outlist)
 #### _Nitrogen Dioxide (NO2) 2019  ####
 
 #import the raster
-ras <- raster("~/Documents/GIS/NY/Rasters/AQI/AnnAvg1_13_300mRaster/aa12_no2300m/prj.adf")
+ras <- raster("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Rasters/AQI/AnnAvg1_13_300mRaster/aa12_no2300m/prj.adf")
 
 #this is the distance you want to buffer
 buff_dist <- 500 
@@ -232,7 +232,7 @@ NO2_df <- data.table::rbindlist(outlist)
 #### _Ozone (O3) 2019  ####
 
 #import the raster
-ras <- raster("~/Documents/GIS/NY/Rasters/AQI/AnnAvg1_13_300mRaster/s12_o3300m/prj.adf")
+ras <- raster("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Rasters/AQI/AnnAvg1_13_300mRaster/s12_o3300m/prj.adf")
 
 #this is the distance you want to buffer
 buff_dist <- 500 
@@ -286,6 +286,14 @@ AQI_data <- left_join(AQI_data, NO_df,  by = c("x", "y", "park"))
 AQI_data <- left_join(AQI_data, NO2_df,  by = c("x", "y", "park"))
 AQI_data <- left_join(AQI_data, O3_df,  by = c("x", "y", "park"))
 
+AQI_parks <- write_csv(AQI_data, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/AQI_parks.csv")
+
+
+################################.
+#### READ IN AQI PARKS DATA ####
+################################.
+
+AQI_parks <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/AQI_parks.csv")
 
 ###############.
 #### Plots ####
@@ -342,4 +350,89 @@ ggplot(data=O3_df, aes(x=reorder(park, O3, FUN=mean), y=O3)) +
                geom = "pointrange", color = "black") +
   scale_x_discrete(guide = guide_axis(angle = 45))+
   xlab("2019 Ozone") +
+  theme_classic()
+
+
+###############.
+#### PCA ####
+###############.
+
+library('corrr')
+library(ggcorrplot)
+library("FactoMineR")
+
+#new dataset for just the site name & gps
+AQI_parks<- subset(AQI_parks, !park=="CentralPark")
+sites <- AQI_parks %>% select(park, x, y)
+
+#subset
+pca_subset <- AQI_parks[,c(3,5:7)]
+head(pca_subset)
+
+#scale - apply makes sure it scales in the right direction
+pca_subset_scaled <- apply(pca_subset, 2, scale)
+head(pca_subset_scaled)
+
+#create correlation matrix
+corr_matrix <- cor(pca_subset_scaled)
+ggcorrplot(corr_matrix)
+
+#run pca, save output
+pca_out<-prcomp(pca_subset_scaled, scale=T, center=T)
+
+#save output summary for proportion of variance explained by first 3 PCs
+pve <- summary(pca_out)$importance[2,1:3]
+
+#combine output with site labels
+PCaxes<-pca_out$x[,1:3]
+pca_df <- as.data.frame(cbind(sites, PCaxes))
+
+#plot PCA
+morningside= "#8d5a99"
+  inwood="#a47158"
+    vancortlandt="#e8718d"
+      soundview="#097d79"
+        pelham="#e5b636"
+          highbridge="#e77148"
+            crotona="#54a82d"
+              
+colors<-c(morningside, inwood, crotona, highbridge, vancortlandt, soundview, pelham)
+#reorder parks by SVI
+pca_df<- pca_df %>% mutate(park=fct_relevel(park, 
+                                                "Morningside", "Inwood", "Crotona", "Highbridge", "VanCortlandt", 
+                                                "Soundview", "PelhamBaySouth" )) 
+
+ggplot(data=pca_df, aes(x=park, y=PC1)) + 
+  geom_point()+
+  geom_violin(aes(x=park, y=PC1))+
+  stat_summary(fun.data = "mean_sdl",  fun.args = list(mult = 1), 
+               geom = "pointrange", color = "black") +
+  #geom_boxplot()+
+  scale_x_discrete(guide = guide_axis(angle = 45))+
+  xlab("PC1") +
+  theme_classic()
+
+
+
+#reorder parks by SVI
+AQI_parks<- AQI_parks %>% mutate(park=fct_relevel(park, 
+                                            "Morningside", "Inwood", "Crotona", "Highbridge", "VanCortlandt", 
+                                            "Soundview", "PelhamBaySouth" )) 
+
+
+ggplot(data=AQI_parks, aes(x=park, y=PM2.5)) + 
+  #geom_point()+
+  geom_violin()+
+  stat_summary(fun.data = "mean_sdl",  fun.args = list(mult = 1), 
+               geom = "pointrange", color = "black") +
+  scale_x_discrete(guide = guide_axis(angle = 45))+
+  xlab("2019 PPM 2.5") +
+  theme_classic()
+
+ggplot(data=AQI_parks, aes(x=park, y=PM2.5)) + 
+  geom_boxplot()+
+  stat_summary(fun.data = "mean_sdl",  fun.args = list(mult = 1), 
+               geom = "pointrange", color = "black") +
+  scale_x_discrete(guide = guide_axis(angle = 45))+
+  xlab("2019 PPM 2.5") +
   theme_classic()

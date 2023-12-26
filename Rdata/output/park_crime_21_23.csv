@@ -1,0 +1,9 @@
+Park,Borough,Acres,murder,robbery,assault,burglary,larcen,larcen_motor,crime_total
+Crotona,BRONX,128,0,18,2,0,3,1,27
+Highbridge,MANHATTAN,130,0,10,4,1,7,0,22
+Highbridge Park Bronx Side,BRONX,0.82,0,0,1,1,0,0,2
+Inwood,MANHATTAN,196,0,3,3,0,1,0,8
+Morningside,MANHATTAN,29.9,0,8,3,0,5,0,16
+PelhamBaySouth,BRONX,2770,0,4,4,0,2,0,11
+Soundview,BRONX,205,0,13,6,0,4,0,24
+VanCortlandt,BRONX,1150,0,7,4,0,4,0,17

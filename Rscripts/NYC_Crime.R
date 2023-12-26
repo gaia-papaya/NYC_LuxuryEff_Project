@@ -6,9 +6,9 @@ library(tidyverse)
 library(readxl)
 
 
-###################################.
-#### Read in and merge files   ####
-###################################.
+######################################.
+#### Proccess & merge raw files   ####
+######################################.
 
 
 setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/Crime_files")
@@ -43,11 +43,11 @@ for (i in 1:length(crime_list)){
 
 crime_data <- data.table::rbindlist(outlist)
 
-#write_csv(crime_data, "crimeNYC_21_23.csv")
+write_csv(crime_data, "crimeNYC_21_23.csv")
 
-#######################################.
-#### Select for parks of interest  ####
-#######################################.
+##########################################.
+#### Read in data - Select for parks  ####
+##########################################.
 
 #read in data
 crime <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/Crime_files/crimeNYC_21_23.csv")
@@ -76,13 +76,19 @@ park_crime$Park[which(park_crime$Park=="Inwood Hill Park")]<-"Inwood"
 park_crime$Park[which(park_crime$Park=="Soundview Park")]<-"Soundview"
 park_crime$Park[which(park_crime$Park=="Van Cortlandt Park")]<-"VanCortlandt"
 park_crime$Park[which(park_crime$Park=="Morningside Park")]<-"Morningside"
-park_crime$Park[which(park_crime$Park=="Pelham Bay Park")]<-"PelhamBay"
+park_crime$Park[which(park_crime$Park=="Pelham Bay Park")]<-"PelhamBaySouth"
 
 
 park_crime_21_23 <- park_crime %>% group_by(Park, Borough, Acres) %>%
   summarise(murder = sum(Murder), robbery=sum(Robbery), assault=sum(`Felony Assault`), 
             burglary=sum(Burglary), larcen=sum(`Grand Larceny`), larcen_motor=sum(`Grand Larceny Of Motor Vehicle`),
             crime_total=sum(Total))
+
+
+#write_csv(park_crime_21_23, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/park_crime_21_23.csv")
+#read in park specific data
+#park_crime_21_23 <- readcsv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/park_crime_21_23.csv")
+
 
 #make long
 park_crime_21_23_long <- park_crime_21_23  %>%
@@ -119,10 +125,10 @@ park_crime_21_23_long2<-subset(park_crime_21_23_long, Park!="Highbridge Park Bro
 ####   PLOTS   ####
 ###################.
 
-
+park_crime_21_23_long2<-subset(park_crime_21_23_long, Park!="Highbridge Park Bronx Side") #removing highbridge bronx)
 
 #total crime
-ggplot(data=park_crime_21_23_long, aes(x=reorder(Park, total), y=total)) + 
+ggplot(data=park_crime_21_23_long2, aes(x=reorder(Park, SVI), y=crime_total)) + 
   geom_bar(stat='identity')+
  # stat_summary(fun.data = "mean_sdl",  fun.args = list(mult = 1), 
 #               geom = "pointrange", color = "black") +
@@ -132,7 +138,7 @@ ggplot(data=park_crime_21_23_long, aes(x=reorder(Park, total), y=total)) +
   theme_classic()
 
 #crime adjusted for size 
-ggplot(data=park_crime_21_23_long, aes(x=reorder(Park, total_per_acre), y=total_per_acre)) + 
+ggplot(data=park_crime_21_23_long2, aes(x=reorder(Park, SVI), y=crime_per_acre)) + 
   geom_bar(stat='identity')+
   # stat_summary(fun.data = "mean_sdl",  fun.args = list(mult = 1), 
   #               geom = "pointrange", color = "black") +
@@ -141,32 +147,11 @@ ggplot(data=park_crime_21_23_long, aes(x=reorder(Park, total_per_acre), y=total_
   xlab("")+
   theme_classic()
 
-#crime adjusted for size  (removing highbridge bronx)
-park_crime_21_23_long2<-subset(park_crime_21_23_long, Park!="Highbridge Park Bronx Side")
-ggplot(data=park_crime_21_23_long2, aes(x=reorder(Park, total_per_acre), y=total_per_acre)) + 
-  geom_bar(stat='identity')+
-  # stat_summary(fun.data = "mean_sdl",  fun.args = list(mult = 1), 
-  #               geom = "pointrange", color = "black") +
-  scale_x_discrete(guide = guide_axis(angle = 45))+
-  ylab("Crime Per Acre 2021-2023") +
-  xlab("")+
-  theme_classic()
-
-
-#total crime (removing highbridge bronx)
-ggplot(data=park_crime_21_23_long2, aes(x=reorder(Park, total), y=total)) + 
-  geom_bar(stat='identity')+
-  # stat_summary(fun.data = "mean_sdl",  fun.args = list(mult = 1), 
-  #               geom = "pointrange", color = "black") +
-  scale_x_discrete(guide = guide_axis(angle = 45))+
-  ylab("Total Crime 2021-2023") +
-  xlab("")+
-  theme_classic()
 
 colors<-c("#fef0d9", "#fdd49e",  "#fdbb84", "#fc8d59", "#e34a33", "#b30000")
   
 #crime by type
-ggplot(data=park_crime_21_23_long, aes(x=reorder(Park, N, FUN=sum), y=N, fill=Crime)) +
+ggplot(data=park_crime_21_23_long2, aes(x=reorder(Park, SVI), y=N_crime, fill=Crime)) +
   geom_bar(stat='identity', color="black") +
   scale_fill_manual(values=colors) +
   scale_x_discrete(guide = guide_axis(angle = 45))+

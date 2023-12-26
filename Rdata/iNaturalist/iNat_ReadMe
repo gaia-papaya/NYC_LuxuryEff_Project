@@ -1,7 +1,7 @@
 Data extracted from iNaturalist Jan 1, 2019 through Dec 20, 2023. Filter for Research grade observations
 
 
-qquality_grade=research&identifications=any&iconic_taxa%5B%5D=Aves&iconic_taxa%5B%5D=Reptilia&iconic_taxa%5B%5D=Amphibia&iconic_taxa%5B%5D=Arachnida&iconic_taxa%5B%5D=Insecta&iconic_taxa%5B%5D=Plantae&place_id=125416&verifiable=true&d1=2019-01-01&d2=2023-12-20&spam=false
+quality_grade=research&identifications=any&iconic_taxa%5B%5D=Aves&iconic_taxa%5B%5D=Reptilia&iconic_taxa%5B%5D=Amphibia&iconic_taxa%5B%5D=Arachnida&iconic_taxa%5B%5D=Insecta&iconic_taxa%5B%5D=Plantae&place_id=125416&verifiable=true&d1=2019-01-01&d2=2023-12-20&spam=false
 
 https://www.inaturalist.org/observations/export?verifiable=true&page=1&spam=false&d1=2019-01-01&iconic_taxa%5B%5D=Aves&iconic_taxa%5B%5D=Amphibia&iconic_taxa%5B%5D=Reptilia&iconic_taxa%5B%5D=Plantae&iconic_taxa%5B%5D=Insecta&iconic_taxa%5B%5D=Arachnida&place_id=125429&user_id=&project_id=&swlng=&swlat=&nelng=&nelat=&lat=&lng=&radius=&q=&d2=2023-12-20
 
