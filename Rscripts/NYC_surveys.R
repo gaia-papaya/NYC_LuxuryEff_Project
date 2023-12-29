@@ -130,12 +130,13 @@ ggplot(data=combo, aes(x=reorder(park, SVI), y=sp_rich_area, fill=SVI)) +
   ylab("Species Richness / area") +
   scale_fill_gradient(high = "#800000", low = "#EEE8AA")+
   xlab("")+
-  ggtitle("All taxa") +
+  ggtitle("Bird Surveys") +
   theme_classic()+
   theme(plot.title = element_text(hjust = 0.5))
 
-ggsave(filename="birds_svi_bars.jpg", width = 5, height = 7, units = c("in"), dpi = 300, 
-       path = "~/Documents/Projects/LuxuryNYC/Figures")
+#ggsave(filename="birds_svi_bars.jpg", width = 5, height = 7, units = c("in"), dpi = 300, 
+#       path = "~/Documents/Projects/LuxuryNYC/Figures")
+
 
 
 
@@ -164,22 +165,8 @@ ggplot(data=combo, aes(x=SVI, y=sp_rich_area, color=park, shape=taxon)) +
   theme_classic()+
   theme(plot.title = element_text(hjust = 0.5))
 
-ggsave(filename="rich_svi_trend.jpg", width = 5, height = 4, units = c("in"), dpi = 300, 
-       path = "~/Documents/Projects/LuxuryNYC/Figures")
+#ggsave(filename="rich_svi_trend.jpg", width = 5, height = 4, units = c("in"), dpi = 300, 
+#       path = "~/Documents/Projects/LuxuryNYC/Figures")
 
 
 
-
-
-
-
-ggplot(data=combo, aes(x=reorder(park, SVI), y=tree_richness_per_acre, fill=SVI)) +
-  geom_bar(stat="identity", color="black")+
-  scale_x_discrete(guide = guide_axis(angle = 45))+
-  scale_fill_gradient(high = "#800000", low = "#EEE8AA")+
-  ylab("Tree Species Richness / area") +
-  xlab("") +
-  theme_classic()
-
-ggsave(filename="inat_richness.jpg", width = 5, height = 4, units = c("in"), dpi = 300, 
-    path = "~/Documents/Projects/LuxuryNYC/Figures")

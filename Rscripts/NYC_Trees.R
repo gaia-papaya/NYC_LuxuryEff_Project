@@ -7,6 +7,7 @@ library(tidyverse)
 library(dplyr)
 library(stringdist)
 library(vegan)
+library(hillR)
 
 #Dataset updated in 2022, downloaded from this site:
 #https://scout.tsdataclinic.com/explore/NYC/dataset/k5ta-2trh/joins
@@ -103,7 +104,8 @@ write_csv(parktrees, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata
 
 #read in df
 parktrees <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/parktrees_2016-2023.csv")
-
+parktrees$park[which(parktrees$park=="Inwood")]<-"InwoodHill"
+parktrees<-subset(parktrees, !park=="CentralPark") 
 
 
 ##### search for typos ####
@@ -119,7 +121,7 @@ parktrees[potential_typos, ]
 
 
 
-### Summarise dataset
+### Summarise dataset for species richness
 richness_df <- parktrees %>%
   group_by(park) %>%
   summarize(unique_tree_sp = length(unique(scientific)))
@@ -129,8 +131,9 @@ richness_df <- parktrees %>%
 cencus_data <- read.csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/SVI_df.csv")
 cencus_data_summary<-cencus_data %>% group_by(park) %>%
   summarise(SVI=mean(SVI), SocioEco=mean(SocioEco), Minority=mean(Minority))
-cencus_data_summary$park
+cencus_data_summary$park[which(cencus_data_summary$park=="Inwood")]<-"InwoodHill"
 richness_df$park
+cencus_data_summary$park
 combo<-left_join(cencus_data_summary, richness_df, by="park")
 
 
@@ -138,6 +141,7 @@ combo<-left_join(cencus_data_summary, richness_df, by="park")
 crime <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/park_crime_21_23.csv") 
 crime <- crime %>% select(Park, Acres, crime_total) %>%
   mutate(park=Park, crime_per_acre=(crime_total/Acres))
+crime$park[which(crime$park=="Inwood")]<-"InwoodHill"
 
 combo<-left_join(combo, crime, by="park") %>%
   mutate(tree_richness_per_acre=(unique_tree_sp/Acres))
@@ -170,52 +174,60 @@ species_abundance <- table(parktrees$park, parktrees$scientific)
 shannon_index <- as.data.frame(diversity(species_abundance, index = "shannon")) 
 colnames(shannon_index)<-"shannon"
 shannon_index$park <- rownames(shannon_index)
-
-# Calculate using multiple hill numbers
-# Specify a vector of q values for Hill numbers
-q_vals <- c(0, 1, 2)
-
-# Calculate diversity using multiple Hill numbers
-
-# Create a result data frame
-result_df <- data.frame(site = rownames(diversity_results), Hill0 = diversity_results[, 1], Hill1 = diversity_results[, 2], Hill2 = diversity_results[, 3])
-
-# Print the results
-print(result_df)
-
-#Calculate diversity corrected for size
-#Add size of park from crime dataset
-crime <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/park_crime_21_23.csv") 
-crime <- crime %>% select(Park, Acres, crime_total) %>%
-  mutate(park=Park, crime_per_acre=(crime_total/Acres)) 
-
-shannon_index<-left_join(shannon_index, crime, by="park") %>%
+combo<-left_join(combo, shannon_index, by="park") 
+combo <- combo %>%
   mutate(shannon_per_acre=(shannon/Acres))
 
-#Add SVI
-cencus_data <- read.csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/SVI_df.csv")
-cencus_data_summary<-cencus_data %>% group_by(park) %>%
-  summarise(SVI=mean(SVI), SocioEco=mean(SocioEco), Minority=mean(Minority))
-shannon_index<-left_join(shannon_index, cencus_data_summary, by="park")
+#Calculate tree density
+### Summarise dataset for density
+density_df <- parktrees %>%
+  group_by(park) %>%
+  summarize(total_trees = length(scientific))
+combo<-left_join(combo, density_df, by="park") %>%
+  mutate(tree_density=(total_trees/Acres))
 
+#Correct richness for density (instead of park size)
 
-ggplot(data=shannon_index, aes(x=reorder(park, SVI), y=shannon_per_acre, fill=SVI)) +
+#shannons diversity per acre X SVI
+ggplot(data=combo, aes(x=reorder(park, SVI), y=shannon_per_acre, fill=SVI)) +
   geom_bar(stat="identity", color="black")+
   scale_x_discrete(guide = guide_axis(angle = 45))+
   scale_fill_gradient(high = "#800000", low = "#EEE8AA")+
   ylab("Tree diversity (shannons) / area") +
   xlab("") +
   theme_classic()
+ggsave(filename="TreeShannons.jpg", width = 5, height = 3.4, units = c("in"), dpi = 300, 
+       path = "~/Documents/Projects/LuxuryNYC/Figures")
 
 
-ggplot(data=shannon_index, aes(x=reorder(park, SVI), y=shannon, fill=SVI)) +
+#shannons diversity uncorrected X SVI
+ggplot(data=combo, aes(x=reorder(park, SVI), y=shannon, fill=SVI)) +
   geom_bar(stat="identity", color="black")+
   scale_x_discrete(guide = guide_axis(angle = 45))+
   scale_fill_gradient(high = "#800000", low = "#EEE8AA")+
-  ylab("Tree diversity (shannons)) +
+  ylab("Tree diversity (shannons)") +
   xlab("") +
   theme_classic()
 
-ggsave(filename="TreeShannons.jpg", width = 5, height = 4, units = c("in"), dpi = 300, 
-    path = "~/Documents/Projects/LuxuryNYC/Figures")
+#density X SVI
+ggplot(data=combo, aes(x=reorder(park, SVI), y=tree_density, fill=SVI)) +
+  geom_bar(stat="identity", color="black")+
+  scale_x_discrete(guide = guide_axis(angle = 45))+
+  scale_fill_gradient(high = "#800000", low = "#EEE8AA")+
+  ylab("Tree density") +
+  xlab("") +
+  theme_classic()
 
+
+#density X SVI
+ggplot(data=combo, aes(x=reorder(park, SVI), y=tree_density, fill=SVI)) +
+  geom_bar(stat="identity", color="black")+
+  scale_x_discrete(guide = guide_axis(angle = 45))+
+  scale_fill_gradient(high = "#800000", low = "#EEE8AA")+
+  ylab("Tree density") +
+  xlab("") +
+  theme_classic()
+ggsave(filename="TreeDensity.jpg", width = 6, height = 4, units = c("in"), dpi = 300, 
+       path = "~/Documents/Projects/LuxuryNYC/Figures")
+
+       

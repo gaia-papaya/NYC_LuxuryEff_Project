@@ -6,6 +6,7 @@ library(sf)
 library(tidyverse)
 library(dplyr)
 library(stringdist)
+library(lme4)
 
 #reads in dataframes extracted from inaturalist from parks (2019-01-01 to 2023-12-20)
 #combines them into a single dataframe 
@@ -140,11 +141,13 @@ write_csv(ebird_df, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/
 #read in inat and ebird and tree diversity dfs
 inat_df <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/inat_2019-23.csv")
 ebird_df <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/ebird_2019-23.csv")
-parktrees <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/parktrees_2016-2023.csv")
-    parktrees$park[which(parktrees$park=="Inwood")]<-"InwoodHill"
-    parktrees <- parktrees %>%
-      mutate(common_name=common, scientific_name = scientific, user_login="NA", 
-             source="tree_points_nyc", iconic_taxon_name = "Plantae")
+
+
+#parktrees <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/parktrees_2016-2023.csv")
+#    parktrees$park[which(parktrees$park=="Inwood")]<-"InwoodHill"
+#    parktrees <- parktrees %>%
+#      mutate(common_name=common, scientific_name = scientific, user_login="NA", 
+#             source="tree_points_nyc", iconic_taxon_name = "Plantae")
 
     
 #determine effort - eventDate per userID per park
@@ -213,13 +216,14 @@ for (j in nrow(inat_num_events)){
 
 
 
-##### combine ebird, inat, and tree cencus
+##### combine ebird, inat
 
-common_cols<-intersect(colnames(inat_df), colnames(parktrees))
+#common_cols<-intersect(colnames(inat_df), colnames(parktrees))
+common_cols<-intersect(colnames(inat_df), colnames(ebird_df))
 inat_ebird_df <- rbind(
   subset(inat_df, select = common_cols), 
-  subset(ebird_df, select = common_cols),
-  subset(parktrees, select = common_cols)
+  subset(ebird_df, select = common_cols)
+#  ,subset(parktrees, select = common_cols)
 )
 
 
@@ -264,26 +268,55 @@ inat_ebird_df$scientific_name[which(inat_ebird_df$scientific_name=="Leiothlypis 
 inat_ebird_df$scientific_name[which(inat_ebird_df$scientific_name=="Liriodendron tulipifera 'Arnold'")] <-  "Liriodendron tulipifera"
 inat_ebird_df$scientific_name[which(inat_ebird_df$scientific_name=="Chrysemys picta picta")] <-  "Chrysemys picta"
 
+write_csv(inat_ebird_df, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/inat_ebird_df.csv")
 
-#### calculate richness  ####
+###########################################.
+####  SHORTCUT inat_ebird combo data ####
+###########################################.
+
+inat_ebird_df<-read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/inat_ebird_df.csv")
+inat_ebird_df<-inat_ebird_df[-which(inat_ebird_df$park=="CentralPark"),]
+
+#add groups for herps, plants, inverts
+inat_ebird_df$taxon<-NA
+inat_ebird_df$taxon[which(inat_ebird_df$iconic_taxon_name=="Reptilia" | inat_ebird_df$iconic_taxon_name=="Amphibia")]<-"Herpetofauna"
+inat_ebird_df$taxon[which(inat_ebird_df$iconic_taxon_name=="Insecta" | inat_ebird_df$iconic_taxon_name=="Arachnida")]<-"Ter. Inverts"
+inat_ebird_df$taxon[which(inat_ebird_df$iconic_taxon_name=="Plantae" | inat_ebird_df$iconic_taxon_name=="trees")]<-"Plantae"
+inat_ebird_df$taxon[which(inat_ebird_df$iconic_taxon_name=="Aves")] <- "Aves"
+
+
+#### _Calculate number of records per park ####
+effort_df <- inat_ebird_df %>%
+  group_by(park, taxon) %>%
+  summarize(n=n())
+crime <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/park_crime_21_23.csv") %>% 
+  select(Park, Acres) %>%
+  mutate(park=Park)
+crime$park[which(crime$park=="Inwood")]<-"InwoodHill"
+cencus_data_summary <- read.csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/SVI_df.csv") %>% group_by(park) %>%
+  summarise(SVI=mean(SVI))  
+cencus_data_summary$park[which(cencus_data_summary$park=="Inwood")]<-"InwoodHill"
+effort_df<-left_join(effort_df, crime, by="park")
+effort_df<-left_join(effort_df, cencus_data_summary, by="park")
+effort_df$observation_density<-NA
+effort_df$observation_density<-effort_df$n/effort_df$Acres
+
+
+
+
+#### _Calculate richness  ####
 ### also accounting for total observations ###
 
 #by group
-all_richness <- inat_ebird_df %>%
-  group_by(park, iconic_taxon_name) %>%
-  summarize(unique_sp = length(unique(scientific_name)), n_observations=)
-
 #Including data source grouping  (ebird, inat, nyc trees)
-all_richness2 <- inat_ebird_df %>%
-  group_by(park, iconic_taxon_name, source) %>%
+all_richness <- inat_ebird_df %>%
+  group_by(park, iconic_taxon_name, taxon, source) %>%
   summarize(unique_sp = length(unique(scientific_name)))
 
-#add groups for herps, plants, inverts
-all_richness$taxon<-NA
-all_richness$taxon[which(all_richness$iconic_taxon_name=="Reptilia" | all_richness$iconic_taxon_name=="Amphibia")]<-"Herpetofauna"
-all_richness$taxon[which(all_richness$iconic_taxon_name=="Insecta" | all_richness$iconic_taxon_name=="Arachnida")]<-"Ter. Inverts"
-all_richness$taxon[which(all_richness$iconic_taxon_name=="Plantae" | all_richness$iconic_taxon_name=="trees")]<-"Plantae"
-all_richness$taxon[which(all_richness$iconic_taxon_name=="Aves")] <- "Aves"
+#no source grouping
+all_richness <- inat_ebird_df %>%
+  group_by(park, iconic_taxon_name, taxon) %>%
+  summarize(unique_sp = length(unique(scientific_name)))
 
 
 #inat_richness <- inat_df %>%
@@ -302,7 +335,7 @@ all_richness$taxon[which(all_richness$iconic_taxon_name=="Aves")] <- "Aves"
 #all_richness <-rbind(inat_richness, ebird_richness, tree_richness) 
   
 
-#### Consolidate with other datasets ####
+#### _Consolidate with other datasets ####
 
 #Add SVI and crime data (with size of park)
 cencus_data <- read.csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/SVI_df.csv")
@@ -318,7 +351,9 @@ crime$park[which(crime$park=="Inwood")]<-"InwoodHill"
 
 #combine
 combo<-left_join(all_richness, cencus_data_summary, by="park")
-combo<-left_join(combo, crime, by="park") %>%
+combo<-left_join(combo, crime, by="park") 
+combo<-combo %>%
+#  group_by(park, taxon) %>%
   mutate(sp_rich_area=(unique_sp/Acres))
 
 
@@ -369,6 +404,37 @@ ggplot(data=combo, aes(x=reorder(park, SVI), y=sp_rich_area, fill=SVI)) +
 ggsave(filename="rich_svi_bars.jpg", width = 5, height = 7, units = c("in"), dpi = 300, 
        path = "~/Documents/Projects/LuxuryNYC/Figures")
 
+#not scaled for size
+ggplot(data=combo, aes(x=reorder(park, SVI), y=unique_sp, fill=SVI)) +
+  geom_bar(stat="identity", color="black")+
+  scale_x_discrete(guide = guide_axis(angle = 45))+
+  ylab("Species Richness / area") +
+  scale_fill_gradient(high = "#800000", low = "#EEE8AA")+
+  xlab("")+
+  #  ggtitle("All taxa") +
+  facet_grid(taxon ~ ., scales = "free_y") +
+  theme_classic()+
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.margin = margin(1, 1, 1, 1, "cm"))
+#ggsave(filename="rich_svi_bars.jpg", width = 5, height = 7, units = c("in"), dpi = 300, 
+#       path = "~/Documents/Projects/LuxuryNYC/Figures")
+
+
+
+# DENSITY OF OBSERVATIONS PER PARK
+ggplot(data=effort_df, aes(x=reorder(park, SVI), y=observation_density, fill=SVI)) +
+  geom_bar(stat="identity", color="black")+
+  scale_x_discrete(guide = guide_axis(angle = 45))+
+  ylab("Observation_density") +
+  scale_fill_gradient(high = "#800000", low = "#EEE8AA")+
+  xlab("")+
+  #  ggtitle("All taxa") +
+  facet_grid(taxon ~ ., scales = "free_y") +
+  theme_classic()+
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.margin = margin(1, 1, 1, 1, "cm"))
+ggsave(filename="inat_ebird_observations.jpg", width = 5, height = 7, units = c("in"), dpi = 300, 
+       path = "~/Documents/Projects/LuxuryNYC/Figures")
 
 
 #colored by park
@@ -391,7 +457,7 @@ ggplot(data=combo, aes(x=SVI, y=sp_rich_area, color=park, shape=taxon)) +
  # scale_fill_gradient(high = "#800000", low = "#EEE8AA")+
   xlab("Social Vulnerability Index")+
   #  ggtitle("All taxa") +
-  facet_grid(~taxon, scales = "free_y") +
+ # facet_grid(~taxon, scales = "free_y") +
   theme_classic()+
   theme(plot.title = element_text(hjust = 0.5))
 
@@ -412,5 +478,77 @@ ggplot(data=combo, aes(x=reorder(park, SVI), y=tree_richness_per_acre, fill=SVI)
   xlab("") +
   theme_classic()
 
-ggsave(filename="inat_richness.jpg", width = 5, height = 4, units = c("in"), dpi = 300, 
-    path = "~/Documents/Projects/LuxuryNYC/Figures")
+#ggsave(filename="inat_richness.jpg", width = 5, height = 4, units = c("in"), dpi = 300, 
+#    path = "~/Documents/Projects/LuxuryNYC/Figures")
+
+
+
+
+
+#####################.
+####  ANALYSIS ####
+#####################.
+
+#all diversity
+model1<-glm(unique_sp ~ SVI + Acres, data=combo, family=poisson)
+summary(model1)
+#Coefficients:
+#  Estimate Std. Error z value Pr(>|z|)    
+#(Intercept)  5.049e+00  5.830e-02   86.60   <2e-16 ***
+#  SVI         -1.573e+00  1.605e-01   -9.80   <2e-16 ***
+#  Acres        5.208e-04  2.748e-05   18.95   <2e-16 ***
+
+#diversity by taxa
+model2<-glm(unique_sp ~ SVI + SVI:taxon + Acres, data=combo, family=poisson)
+summary(model2)
+#  Estimate Std. Error z value Pr(>|z|)    
+#(Intercept)            5.471e+00  5.791e-02   94.49   <2e-16 ***
+#  SVI                   -1.746e+00  1.653e-01  -10.56   <2e-16 ***
+#  Acres                  5.699e-04  2.705e-05   21.07   <2e-16 ***
+#  SVI:taxonHerpetofauna -8.144e+00  3.284e-01  -24.80   <2e-16 ***
+#  SVI:taxonPlantae       8.982e-01  6.960e-02   12.91   <2e-16 ***
+#  SVI:taxonTer. Inverts -9.383e-01  7.705e-02  -12.18   <2e-16 ***
+
+# n_observations
+model3<-glm(observation_density ~  SVI:taxon, data=effort_df, family=poisson)
+summary(model3)
+
+
+library(sjPlot)
+library(sjmisc)
+library(ggplot2)
+theme_set(theme_sjplot())
+
+cols=c("#76B7B2","#D7B5A6","#59A14F", "#B07AA1")
+plot_model(model2, type = "pred", terms = c("SVI", "taxon"))+
+  ylab("Species Richness")+
+  xlab("Social Vulerability Index")+
+  scale_color_manual(values=c("#76B7B2","#D7B5A6","#59A14F", "#B07AA1"))+
+  scale_fill_manual(values=c("#76B7B2","#D7B5A6","#59A14F", "#B07AA1"))+
+  theme_classic()+
+  theme(
+    legend.title=element_blank(),
+    plot.title = element_blank(),
+  )
+ggsave(filename="inat_richness_model2.jpg", width = 4.5, height = 5, units = c("in"), dpi = 300, 
+       path = "~/Documents/Projects/LuxuryNYC/Figures")
+
+
+cols=c("#76B7B2","#D7B5A6","#59A14F", "#B07AA1")
+plot_model(model3, type = "pred", terms = c("SVI", "taxon"))+
+  ylab("Public records")+
+  xlab("Social Vulerability Index")+
+  scale_color_manual(values=c("#76B7B2","#D7B5A6","#59A14F", "#B07AA1"))+
+  scale_fill_manual(values=c("#76B7B2","#D7B5A6","#59A14F", "#B07AA1"))+
+  theme_classic()+
+  theme(
+    legend.title=element_blank(),
+    plot.title = element_blank(),
+  )
+
+
+model4<-glm(sp_rich_area ~ SVI*taxon, data=combo, family=poisson)
+summary(model4)
+plot_model(model4, type = "pred", terms = c("SVI", "taxon"))
+
+
