@@ -266,6 +266,3 @@ ggplot(data=Minority_df, aes(x=reorder(park, Minority, FUN=mean), y=Minority)) +
   xlab("2018 Minority & Language") +
   theme_classic()
 
-
-
-
