@@ -17,6 +17,7 @@ library(tidyverse)
 
 #Set wd to whatever folder contains the folder that contains the shape files
 setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Buffers/Differences_750m")
+
 #setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/ParkShapeFiles_Raf2")
 
 #Get the shapefile names from the shapefile folder
@@ -266,3 +267,72 @@ ggplot(data=Minority_df, aes(x=reorder(park, Minority, FUN=mean), y=Minority)) +
   xlab("2018 Minority & Language") +
   theme_classic()
 
+#Gaia's Scheming corner----
+#dependencies
+library(lubridate)
+
+#TODO: fix pelham bay size (remove north from calc.), proportionize gradeScores, create gentrification index
+
+#read in redlining data (NOTE: redlining survey was done ~1930s)
+RedLine <- read_csv("Rdata/output/RedliningGradesParks.csv") %>%  #remove whitespace and Park from names for table merging
+  mutate(park = str_remove(str_remove_all(name311, "[:blank:]"), "Park"),
+         date_acquired =as.POSIXct(acquisitio),
+         parkAge = time_length(difftime(Sys.Date(), date_acquired), "years"))
+  
+
+#read in social vuln index data
+SociaVuln <- read_csv("Rdata/SVI_df.csv") %>% #remove south, fix innwood spelling for table merging
+  mutate(park = str_replace(str_remove(park, "South"), "Inwood", "Innwood")) 
+
+# average scores by parks and merge two tables
+RedLineAvg <- RedLine %>% 
+  filter(is.na(gradeScore) != T) %>% 
+  group_by(park) %>% 
+  mutate(gradeScoreMean = mean(gradeScore),
+         gradeScoreSE = sd(gradeScore)/n()) %>% 
+  summarise(acres = unique(acres),
+            parkAge = unique(parkAge),
+            borough = unique(borough),
+            waterfront = unique(waterfront),
+            gradeScoreMean = unique(gradeScoreMean),
+            gradeScoreSE = unique(gradeScoreSE))
+
+SVI_Avg <- SociaVuln %>% 
+  group_by(park) %>% 
+  mutate(SVI_Mean = mean(SVI),
+         SVI_SE = sd(SVI)/n(),
+         SocioEcoMean = mean(SocioEco),
+         SocioEcoSE = sd(SocioEco)/n(),
+         MinorityMean = mean(Minority),
+         MinoritySE = sd(Minority)/n()) %>% 
+  summarise(across(ends_with("Mean") | ends_with("SE"), .fns = unique))
+
+
+#merge summary tables
+SVI_RedLine_summary <- left_join(RedLineAvg, SVI_Avg, by = "park")
+
+#plotting
+#average SVI vs average grade score
+ggplot(SVI_RedLine_summary, aes(x = SVI_Mean, y =gradeScoreMean)) +
+  geom_smooth(se = F, method = "lm") +
+  geom_errorbar(aes(ymin = gradeScoreMean -2*gradeScoreSE, ymax = gradeScoreMean +2*gradeScoreSE))+
+  geom_errorbar(aes(xmin = SVI_Mean -2*SVI_SE, xmax = SVI_Mean +2*SVI_SE))+
+  geom_point(aes(fill = park), size = 8, shape = 21) 
+
+#acreage of park by grade score
+ggplot(filter(SVI_RedLine_summary, park != "PelhamBay"), aes(x = acres, y = gradeScoreMean)) +
+  geom_smooth(se = F, method = "lm") +
+  geom_errorbar(aes(ymin = gradeScoreMean -2*gradeScoreSE, ymax = gradeScoreMean +2*gradeScoreSE))+
+  geom_point(aes(fill = park),shape = 21, size =5)
+
+#acres of park by svi
+ggplot(filter(SVI_RedLine_summary, park != "PelhamBay"), aes(x = acres, y = SVI_Mean)) +
+  geom_smooth(se = F, method = "lm") +
+  geom_errorbar(aes(ymin = SVI_Mean -2*SVI_SE, ymax = SVI_Mean +2*SVI_SE))+
+  geom_point(aes(fill = park),shape = 21, size =5)
+
+#age of park by svi
+ggplot(SVI_RedLine_summary, aes(x =parkAge, y = SVI_Mean)) +
+  geom_smooth(se = F, method = "lm") +
+  geom_errorbar(aes(ymin = SVI_Mean -2*SVI_SE, ymax = SVI_Mean +2*SVI_SE))+
+  geom_point(aes(fill = park),shape = 21, size =5)
