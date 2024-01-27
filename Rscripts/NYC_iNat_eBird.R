@@ -8,16 +8,29 @@ library(dplyr)
 library(stringdist)
 library(lme4)
 
-#reads in dataframes extracted from inaturalist from parks (2019-01-01 to 2023-12-20)
+#reads in dataframes extracted from iNaturalist and eBird from parks 
 #combines them into a single dataframe 
+#using data from 2019-01-01 to 2023-12-20 (see readme in iNat and eBird data folders for search terms)
+
+#created by Valentina Alaasam Dec 2023
+
+## OUTPUT (INAT): "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/inat_2019-23.csv"
+## OUTPUT (EBIRD): "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/ebird_2019-23.csv"
+## OUTPUT (COMBO): "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/inat_ebird_df.csv"
+
+#### SKIP TO 'SHORTCUT' SECTION UNLESS EDITING
+
+#this section combines data with park size (from CRIME data): "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/park_crime_21_23.csv") 
+# and SVI from NY_CencusAnalysis.R: "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/SVI_df.csv"
+  
+
+
+
+######################################.
+#### Proccess raw iNAT downloads #####
+######################################.
 
 setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/iNaturalist")
-
-
-
-#####################################.
-#### Proccess raw iNAT downloads ####
-#####################################.
 
 # List all iNat files in the directory
 inat_list <- list.files(path = "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/iNaturalist", 
@@ -78,9 +91,11 @@ inat_df$park[which(inat_df$park=="PelhamBay")]<-"PelhamBaySouth"
 write_csv(inat_df, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/inat_2019-23.csv")
 
 
-#####################################.
-#### Proccess raw ebird downloads ####
-#####################################.
+#######################################.
+#### Proccess raw ebird downloads #####
+#######################################.
+
+setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/eBird")
 
 # List all iNat files in the directory
 ebird_list <- list.files(path = "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/eBird", 
@@ -123,33 +138,32 @@ for (i in 1:length(ebird_list)){
 ebird_df <- bind_rows(outlist)
 
 
-#remove ourselves from observations
-#ebird_df<-ebird_df[which(ebird_df$user_login!="gaia_papaya"),]
-#ebird_df<-ebird_df[which(ebird_df$user_login!="kmwinchell"),]
-#ebird_df<-ebird_df[which(ebird_df$user_login!="anubesh"),]
+#remove ourselves from observations - NONE
+ebird_df<-ebird_df[which(ebird_df$user_login!="gaia_papaya"),]
+ebird_df<-ebird_df[which(ebird_df$user_login!="kmwinchell"),]
+ebird_df<-ebird_df[which(ebird_df$user_login!="anubesh"),]
 
 #save combined df
-write_csv(ebird_df, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/ebird_2019-23.csv")
+#write_csv(ebird_df, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/ebird_2019-23.csv")
 
 
 
-#################################.
-#### Read & Combine datasets ####
-#################################.
+##################################.
+#### Read & Combine datasets #####
+##################################.
 
 
 #read in inat and ebird and tree diversity dfs
 inat_df <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/inat_2019-23.csv")
 ebird_df <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/ebird_2019-23.csv")
-
-
+    
+#add tree data
 #parktrees <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/parktrees_2016-2023.csv")
 #    parktrees$park[which(parktrees$park=="Inwood")]<-"InwoodHill"
 #    parktrees <- parktrees %>%
 #      mutate(common_name=common, scientific_name = scientific, user_login="NA", 
 #             source="tree_points_nyc", iconic_taxon_name = "Plantae")
 
-    
 #determine effort - eventDate per userID per park
 inat_num_events <- inat_df %>%
   group_by(park) %>%
@@ -216,7 +230,8 @@ for (j in nrow(inat_num_events)){
 
 
 
-##### combine ebird, inat
+
+##### combine ebird & inat dfs
 
 #common_cols<-intersect(colnames(inat_df), colnames(parktrees))
 common_cols<-intersect(colnames(inat_df), colnames(ebird_df))
@@ -227,7 +242,7 @@ inat_ebird_df <- rbind(
 )
 
 
-##### search for typos ####
+### search for typos ###
 
 species <- as.data.frame(unique(inat_ebird_df$scientific_name))
 colnames(species)<-"scientific_name"
@@ -270,11 +285,15 @@ inat_ebird_df$scientific_name[which(inat_ebird_df$scientific_name=="Chrysemys pi
 
 write_csv(inat_ebird_df, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/inat_ebird_df.csv")
 
-###########################################.
-####  SHORTCUT inat_ebird combo data ####
-###########################################.
+
+
+############################################.
+####  SHORTCUT to inat_ebird combo data ####
+############################################.
 
 inat_ebird_df<-read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/inat_ebird_df.csv")
+
+#remove central park
 inat_ebird_df<-inat_ebird_df[-which(inat_ebird_df$park=="CentralPark"),]
 
 #add groups for herps, plants, inverts
@@ -361,8 +380,10 @@ combo<-combo %>%
 #correct for # of observations
 
 
+###############.
+#### Plots ####
+###############.
 
-#Plots
 combo<-combo[-which(combo$park=="CentralPark"),]
 
 #all taxa

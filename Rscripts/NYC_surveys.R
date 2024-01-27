@@ -8,16 +8,17 @@ library(dplyr)
 library(stringdist)
 library(readxl)
 
-#reads in dataframes extracted from inaturalist from parks (2019-01-01 to 2023-12-20)
+#reads in data from our own biodiversity surveys
 #combines them into a single dataframe 
 
-setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project")
-
+#created Dec 2023 by Valentina Alaasam
 
 
 ##########################.
 #### read in datasets ####
 ###########################.
+setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project")
+
 
 # read in data
 birds<-read_excel("Rdata/SurveyData/2023-12-23_BirdSurveys.xlsx")

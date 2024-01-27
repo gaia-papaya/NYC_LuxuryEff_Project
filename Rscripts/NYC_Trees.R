@@ -9,9 +9,24 @@ library(stringdist)
 library(vegan)
 library(hillR)
 
+#This script analyzes tree cencus data (gps points of all trees planted) per park of interest
 #Dataset updated in 2022, downloaded from this site:
 #https://scout.tsdataclinic.com/explore/NYC/dataset/k5ta-2trh/joins
 # User guide: https://docs.google.com/document/d/1PVPWFi-WExkG3rvnagQDoBbqfsGzxCKNmR6n678nUeU/edit?usp=sharing
+#turns gps points into raster then clips to park shape files
+
+#created by Valentina Alaasam Dec 2023
+
+#OUTPUT FILE: "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/parktrees_2016-2023.csv")
+
+
+## SKIP TO "DATA SHORTCUT" UNLESS EDITING
+
+
+
+######################.
+#### read in data ####
+######################.
 
 nyctrees<-read.csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/Forestry_Tree_Points.csv")
 
@@ -20,7 +35,6 @@ nyctrees<-read.csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/F
 # Location: POINT (-74.15171663027641 40.53411487961452)
 # GenusSpecies: Cornus florida - flowering dogwood
 # CreatedDate: 2015-04-02 04:00:00.0000000
-
 
 nyctrees <- nyctrees %>% 
   separate(Location, into = c("lose", "W", "N"), sep = " ") %>%
@@ -96,10 +110,11 @@ parktrees <- data.table::rbindlist(result_list)
 write_csv(parktrees, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/parktrees_2016-2023.csv")
 
 
+
+
 ########################.
 #### DATA SHORTCUT  ####
 ########################.
-
 
 
 #read in df
@@ -108,7 +123,7 @@ parktrees$park[which(parktrees$park=="Inwood")]<-"InwoodHill"
 parktrees<-subset(parktrees, !park=="CentralPark") 
 
 
-##### search for typos ####
+### search for typos ###
 
 # Use the amatch function to find approximate matches
 matches <- amatch(parktrees$scientific, parktrees$scientific, method = "lv")  # "lv" stands for Levenshtein distance
@@ -164,9 +179,9 @@ ggsave(filename="TreeRichness.jpg", width = 5, height = 4, units = c("in"), dpi 
 
 
 
-########################.
-#### DATA ANALYSIS  ####
-########################.
+####################.
+####  ANALYSIS  ####
+####################.
 
 species_abundance <- table(parktrees$park, parktrees$scientific)
 
