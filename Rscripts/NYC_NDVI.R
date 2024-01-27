@@ -6,21 +6,28 @@ library(sf)
 library(tidyverse)
 
 # This code loops through a folder with shape files (of NYC parks), 
-# creates a buffer around each, then clips to a raster
-# Rasters used here are from Planet Quarterly 2022-2023 April-July or July-Oct
+#     OR 750m buffers created in qGIS ('differences' folder)
+# Rasters used here are from Planet Quarterly 2022-2023 April-July (q2) or July-Oct (q3) to capture spring-summer months
 
 # Created Dec 2023 by Valentina Alaasam
 
+# OUTPUT FILE (INSIDE PARKS): "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/ndvi_nycparks.csv"
+# OUTUT FILE (OUTSIDE BUFFER): "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/ndvi_NDVI_750mbuffer.csv")
 
-### ndvi inside parks ####
+# SKIP TO 'PLOTS' OR 'ANALYSIS' SECTIONS IF NOT EDITING
+# this section combines with cencus data from NYC_CencusAnalysis.R output: "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/SVI_df.csv"
 
-####################################.
+
+###########################.
+#### ndvi INSIDE PARKS ####
+###########################.
+
+
 ####  _Import park shape files   ####
-####################################.
 
 #Set wd to whatever folder contains the folder that contains the shape files
-#setwd("~/Documents/GIS/NY/Buffers/Differences/EPSG_5070")
-setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/ParkShapeFiles_Raf2")
+setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Buffers/Differences_750m")  #buffer 
+setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/ParkShapeFiles")
 
 #Get the shapefile names from the shapefile folder
 shapefile_list <- list.files(pattern="\\.shp")  #folder with all files is named "Files"
@@ -39,14 +46,11 @@ shape_file_names <- shape_file_names %>%
   separate(file, into = c("park","drop1"), sep = ".shp")
 
 
-################################.
-####  _Clip Various Rasters  ####
-################################.
 
-#### ndvi  INSIDE PARK ####
+####  _clip rasters  ####
 
 #import the raster
-ras <- raster("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Rasters/NDVI_Planet_quarterly/NDVI_Quartwerly_2022-23_April-July.tif")
+ras <- raster("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Rasters/PlanetBasemaps/NDVI_Planet_quarterly/NDVI_Quartwerly_2022-23_April-July.tif")
 
 #this is the distance you want to buffer (no buffer for ndvi, interested in within park greenness)
 #buff_dist <- 500 
@@ -90,7 +94,7 @@ for (i in 1:length(shapefile_list)) {
   df1<- df %>% mutate(ndvi_bins=cut(NDVI, breaks = bins, include.lowest =TRUE, labels=labels)) %>% 
   group_by(park, mean_ndvi, ndvi_bins) %>% summarise(n = n())
   
-  #add proportion of differeing bins
+  #add proportion of differing bins
   sum<-sum(df1$n)
   df1 <- df1 %>% 
     group_by(ndvi_bins) %>% 
@@ -107,12 +111,11 @@ NDVI_df <- data.table::rbindlist(outlist)
 
 
 
-##################.
 ####  _plots  ####
-##################.
 
+#read in data
 NDVI_df<-read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/ndvi_nycparks.csv")
-#plot
+
 #remove central
 NDVI_df<-subset(NDVI_df, !NDVI_df$park =="CentralPark")
 
@@ -227,15 +230,17 @@ ggsave(filename="ndvi_svi.jpg", width = 6, height = 3, units = c("in"), dpi = 30
 
 
 
-
+#################@@@@@#####.
 ### ndvi OUTSIDE parks ####
+###########################.
+# 750m buffers created in qgis
 
-####################################.
+
 ####  _Import park shape files   ####
-####################################.
+
 
 #Set wd to whatever folder contains the folder that contains the shape files
-#setwd("~/Documents/GIS/NY/Buffers/Differences/EPSG_5070")
+setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Buffers/Differences_750m")  #buffer 
 setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Buffers/Differences_750m")
 
 #Get the shapefile names from the shapefile folder
@@ -255,11 +260,7 @@ parks<-shape_file_names
 #  separate(file, into = c("park","drop1"), sep = ".shp")
 
 
-################################.
-####  _Clip Various Rasters  ####
-################################.
-
-#### ndvi  INSIDE PARK ####
+####  _clip rasters  ####
 
 #import the raster
 ras <- raster("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Rasters/NDVI_Planet_quarterly/NDVI_Quartwerly_2022-23_April-July.tif")
@@ -327,8 +328,8 @@ NDVI_750mbuffer_df <- data.table::rbindlist(outlist)
 ####  _plots  ####
 ##################.
 
+#read in data
 NDVI_750mbuffer_df<-read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/ndvi_NDVI_750mbuffer.csv")
-#plot
 
 #remove central park
 NDVI_750mbuffer_df<-subset(NDVI_750mbuffer_df, !NDVI_750mbuffer_df$park =="CentralPark")
@@ -462,9 +463,30 @@ ggplot(data = NDVI_750mbuffer_df, aes( y = mean_ndvi,
 
 
 
-#######################.
+##################.
 #### ANALYSIS ####
 ##################.
+
+####  _Import park shape files - either surrounding buffer or within parks  ####
+
+setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Buffers/Differences_750m")  #buffer 
+setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/ParkShapeFiles")
+
+#Get the shapefile names from the shapefile folder
+shapefile_list <- list.files(pattern="\\.shp")  #folder with all files is named "Files"
+
+#get name from filenames (differemces)
+#shape_file_names <- data.frame(file = shapefile_list)
+#shape_file_names <- shape_file_names %>% 
+#  mutate(file=file) %>% 
+#  separate(file, into = c("park","drop1", "drop2"), sep = "_")
+#parks<-shape_file_names
+
+#get name from filenames (originals)
+shape_file_names <- data.frame(file = shapefile_list)
+shape_file_names <- shape_file_names %>% 
+  mutate(file=file) %>% 
+  separate(file, into = c("park","drop1"), sep = ".shp")
 
 #looping with no bins
 
@@ -518,7 +540,7 @@ NDVI_raw_df <- data.table::rbindlist(outlist)
 
 
 #Add SVI
-cencus_data <- read.csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/SVI_df.csv")
+cencus_data <- read.csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/SVI_df.csv")
 cencus_data_summary<-cencus_data %>% group_by(park) %>%
   summarise(SVI=mean(SVI), SocioEco=mean(SocioEco), Minority=mean(Minority))
 cencus_data_summary$park[which(cencus_data_summary$park=="Inwood")]<-"InwoodHill"

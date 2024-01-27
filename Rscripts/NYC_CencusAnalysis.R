@@ -9,15 +9,24 @@ library(tidyverse)
 # creates a buffer around each, then clips to a raster
 # Rasters used here are from CDC Social Vulnerability Index (2018) aligned to U.S. Census grids
 
+# OUTFILE: "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/SVI_df.csv"
+
+## SKIP TO "READ IN DATA" SECTION UNLESS EDITING!
+
 # Created Dec 2023 by Valentina Alaasam
 
+
+#########################################.
+####  CLIP RASTERS & PROCESS DATA    ####
+#########################################.
+
 ####################################.
-####  Import park shape files   ####
+####  _Import park shape files   ####
 ####################################.
 
 #Set wd to whatever folder contains the folder that contains the shape files
 setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Buffers/Differences_750m")
-#setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/ParkShapeFiles_Raf2")
+#setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/ParkShapeFiles")
 
 #Get the shapefile names from the shapefile folder
 shapefile_list <- list.files(pattern="\\.shp")  #folder with all files is named "Files"
@@ -36,10 +45,10 @@ shape_file_names <- shape_file_names %>%
 
 
 ################################.
-####  Clip Various Rasters  ####
+####  _Clip Various Rasters  ####
 ################################.
 
-#### _Social Vulnerabilty Index  ####
+#### __Social Vulnerabilty Index  ####
 
 #import the raster
 ras <- raster("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Rasters/SVI-2018-nad83-geotiff/svi_2018_tract_overall_nad83_nopop.tif")
@@ -85,7 +94,7 @@ for (i in 1:length(shapefile_list)) {
 SVI_df <- data.table::rbindlist(outlist)
 
 
-#### _Income ####
+#### __Income ####
 
 #import the raster
 ras <- raster("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Rasters/SVI-2018-nad83-geotiff/svi_2018_tract_socioeconomic_nad83_nopop.tif")
@@ -132,9 +141,9 @@ SocioEco_df <- data.table::rbindlist(outlist)
 
 
 
-#### _Minority Status  #####
+#### __Minority Status  #####
 
-#### _Income ####
+#### __Income ####
 
 #import the raster
 ras <- raster("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Rasters/SVI-2018-nad83-geotiff/svi_2018_tract_minority_nad83_nopop.tif")
@@ -182,13 +191,19 @@ for (i in 1:length(shapefile_list)) {
 Minority_df <- data.table::rbindlist(outlist)
 
 #######################.
-#### LINK ALL DATA ####
+#### _Link all data####
 #######################.
 cencus_data <- SVI_df
 cencus_data <- left_join(cencus_data, SocioEco_df,  by = c("x", "y", "park"))
 cencus_data <- left_join(cencus_data, Minority_df,  by = c("x", "y", "park"))
 
-write_csv(cencus_data, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/SVI_df.csv")
+#write_csv(cencus_data, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/SVI_df.csv")
+
+#######################.
+#### READ IN DATA  ####
+#######################.
+
+
 
 ###############.
 #### Plots ####

@@ -4,7 +4,19 @@ library(data.table)
 library(RColorBrewer)
 
 
-setwd("~/Documents/Projects/LuxuryNYC/Analysis/Events_files")
+#This script summarizes reported EVENTS in NYC parks of interest, and combines with park size (from CRIME dataset) and SVI data
+#SVI data is output of Rscript NYC_CencusAnalysis.R ("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/SVI_df.csv")
+#CRIME data is output of Rscript NYC_Crime.R ("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/park_crime_21_23.csv")
+#Created Dec 2023 by Valentina Alaasam
+
+#OUTPUT: write_csv(my_park_events, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/park_events.csv")
+
+
+## SKIP TO "READ IN DATA" SECTION UNLESS EDITING
+
+
+
+setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/Events_files")
 
 #Get the shapefile names from the shapefile folder
 events <- read_csv("Parks_Special_Events_20231208.csv")
@@ -25,7 +37,7 @@ my_park_events <- my_park_events %>%
 
 
 #extract park sizes from crime dataset
-crime <- read_csv("~/Documents/Projects/LuxuryNYC/Analysis/Crime_files/crimeNYC_21_23.csv")
+crime <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/Crime_files/crimeNYC_21_23.csv")
 colnames(crime)
 
 crime2 <- crime %>% 
@@ -68,6 +80,27 @@ my_park_events <- my_park_events %>%
 
 # Add column of attendees per acre
 my_park_events$Attendance_acre <- my_park_events$Attendance/my_park_events$acres 
+
+
+#write_csv(my_park_events, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/park_events.csv")
+
+
+
+######################.
+#### READ IN DATA ####
+######################.
+
+my_park_events <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/park_events.csv")
+
+
+###############.
+#### PLOTS ####
+###############.
+
+
+
+
+
 
 unique(my_park_events$`Event Type`)
 colors<-c("#f0f9e8","#bae4bc", "#7bccc4", "#2b8cbe")

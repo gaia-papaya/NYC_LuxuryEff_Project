@@ -1,0 +1,294 @@
+Unit,Group Name/Partner,Date and Time,Borough,LocationType,Park,Event Name,EventType,Category,Classification,Attendance,Audience,acres,Attendance_acre
+Recreation,NA,06/22/2019 08:00:00 PM,Bronx,Park,Van Cortlandt Park,Creed 2,Community Based Event,Mobile Unit,M.U.T.S,190,General Public,1146.43,0.1657318807079368
+Recreation,NA,06/21/2019 08:00:00 PM,Bronx,Park,Soundview Park,Spider-Man:Into the Spider-Verse,Community Based Event,Mobile Unit,M.U.T.S,45,General Public,205.31,0.21918075105937362
+Urban Park Rangers,NYC Parks Central Recreation,06/15/2019 11:00:00 AM,Manhattan,Park,Central Park,Adventures NYC,Agency Produced Event,Sport,NA,5000,Children;#Young Adult;#Adults;#Teens,842.6,5.9340137669119395
+Recreation,NA,07/11/2019 08:30:00 PM,Bronx,Park,Soundview Park,Hotel Transylvania 3: Summer Vactaion,Community Based Event,Mobile Unit,M.U.T.S,0,General Public,205.31,0
+Recreation,NA,07/10/2019 08:30:00 PM,Bronx,Park,Van Cortlandt Park,First Man,Community Based Event,Mobile Unit,M.U.T.S,40,Young Adult;#Adults;#Teens;#Adaptive;#Seniors,1146.43,0.03489092225430249
+Recreation,NA,06/23/2018 08:30:00 PM,Bronx,Park,Crotona Park,Movies Under The Stars: Moana,Community Based Event,Mobile Unit,Movies,42,General Public,127.5,0.32941176470588235
+Recreation,NA,07/12/2019 07:00:00 PM,Manhattan,Park,Morningside Park,MUTS: Mamma Mia! Here We Go Again,Community Based Event,Mobile Unit,M.U.T.S,450,General Public,29.888,15.056209850107065
+Recreation,Sinergia Inc.,06/28/2019 11:00:00 AM,Manhattan,Park,Morningside Park,Play Mobile,Community Based Event,Mobile Unit,Play,100,Teens;#Children;#Tot,29.888,3.3458244111349034
+Recreation,NA,07/19/2019 10:30:00 AM,Manhattan,Park,Morningside Park,Play Mobile,Community Based Event,Mobile Unit,Play,60,Tot;#Children;#Teens,29.888,2.007494646680942
+Recreation,NA,07/08/2019 10:30:00 AM,Manhattan,Park,Morningside Park,Play Mobile,Community Based Event,Mobile Unit,Play,150,Tot;#Children;#Teens,29.888,5.0187366167023555
+Recreation,NA,07/26/2019 08:00:00 PM,Manhattan,Park,Morningside Park,MUTS: Mary Poppins Returns,Community Based Event,Mobile Unit,M.U.T.S,278,General Public,29.888,9.30139186295503
+Recreation,NA,07/13/2019 11:00:00 AM,Bronx,Park,Pelham Bay Park,Family Fun Day,Agency Produced Event,Mobile Unit,Play,30,General Public,2771.747,0.01082349868151747
+Recreation,NA,07/23/2019 09:00:00 AM,Bronx,Park,Van Cortlandt Park,Harmony Day,Community Based Event,Mobile Unit,Play,600,General Public,1146.43,0.5233638338145373
+Recreation,NA,05/04/2019 11:00:00 AM,Bronx,Park,Pelham Bay Park,Learn To Ride,Agency Produced Event,Family Festival,NA,5,Children,2771.747,0.0018039164469195782
+Recreation,NA,08/10/2019 08:30:00 PM,Bronx,Park,Crotona Park,Wonder Park,Community Based Event,Mobile Unit,M.U.T.S,120,General Public,127.5,0.9411764705882353
+Recreation,NA,08/09/2019 08:30:00 PM,Bronx,Park,Pelham Bay Park,Ralph Breaks the Internet,Community Based Event,Mobile Unit,M.U.T.S,90,General Public,2771.747,0.03247049604455241
+Urban Park Rangers,NYC Wildflower Week; Office of Congresswoman Alexandria Ocasio Cortez,08/31/2019 11:00:00 AM,Bronx,Park,Pelham Bay Park,Pelham Bay Nature Day,Community Based Event,Family Festival,NA,200,General Public,2771.747,0.07215665787678313
+Urban Park Rangers,NYPD,08/06/2019 03:00:00 PM,Manhattan,Park,Highbridge Park,National Night Out Against Crime,Community Based Event,Family Festival,NA,180,General Public,131,1.3740458015267176
+Recreation,NA,08/02/2019 07:00:00 PM,Manhattan,Park,Morningside Park,MUTS: Second Act,Community Based Event,Mobile Unit,M.U.T.S,280,General Public,29.888,9.36830835117773
+Recreation,NA,09/19/2019 02:30:00 PM,Bronx,Park,Pelham Bay Park,Community Engagement,Agency Produced Event,Mobile Unit,Play,30,Tot;#Children;#Teens,2771.747,0.01082349868151747
+Urban Park Rangers,Van Cortlandt House Museum,09/21/2019 11:00:00 AM,Bronx,Park,Van Cortlandt Park,Van Cortlandt House Museum Second Annual History and Culture Fair,Local Event,Arts/Culture,NA,30,General Public,1146.43,0.026168191690726865
+Urban Park Rangers,Pelham Bay Park Special Events,09/29/2019 12:00:00 PM,Bronx,Park,Pelham Bay Park,The Bronx Native American Festival,Community Based Event,Arts/Culture,NA,105,General Public,2771.747,0.037882245385311146
+Recreation,NYC Parks,09/25/2019 10:00:00 AM,Manhattan,Playground,Morningside Park,Activities for the Kids,Agency Produced Event,Mobile Unit,Play,66,Children;#Tot,29.888,2.2082441113490363
+Urban Park Rangers,Urban Park Rangers and Ametuer Astronomers Association,09/07/2019 07:00:00 PM,Manhattan,Park,Central Park,Star Fest,Community Based Event,Nature,NA,350,Young Adult;#Children;#Adults;#Teens;#General Public;#Seniors,842.6,0.41538096368383576
+Recreation,NA,09/26/2019 07:00:00 PM,Manhattan,Park,Inwood Hill Park,Movies Under the Stars: My Little Pony the Movie,Community Based Event,Mobile Unit,M.U.T.S,10,General Public,196.398,0.05091701544822249
+Recreation,NYC Parks,10/05/2019 10:00:00 AM,Manhattan,Park,Highbridge Park,Summer on the Hudson Little Red Light Festival,Agency Produced Event,Mobile Unit,Play,100,General Public,131,0.7633587786259542
+Urban Park Rangers,NYC Audubon,12/15/2019 08:00:00 AM,Manhattan,Park,Central Park,Christmas Bird Count,Community Based Event,Nature,NA,150,General Public,842.6,0.17802041300735819
+Urban Park Rangers,Urban Park Rangers,09/14/2019 12:00:00 PM,Manhattan,Park,Central Park,Raptor Fest,Agency Produced Event,Family Festival,NA,4000,General Public,842.6,4.747211013529551
+Urban Park Rangers,Parks Marketing and Special Events and Recreation,02/01/2020 11:00:00 AM,Manhattan,Park,Central Park,Winter Jam,Agency Produced Event,Sport,Play,650,Tot;#Children;#Young Adult;#Adults;#Teens,842.6,0.7714217896985521
+Recreation,PS 107,09/01/2021 10:00:00 AM,Bronx,Park,Soundview Park,Monologues for Kids,Agency Produced Event,Arts/Culture,Play,0,Children,205.31,0
+Urban Park Rangers,Public,07/16/2020 02:00:00 PM,Manhattan,Park,Inwood Hill Park,Nature Hike,Agency Produced Event,Nature,Summer 2020,1,General Public,196.398,0.005091701544822249
+Recreation,Giovanni Feliciano,07/14/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,Sport,Summer 2020,3,Children;#Tot;#Teens,131,0.022900763358778626
+Urban Park Rangers,Public,07/16/2020 03:00:00 PM,Manhattan,Park,Inwood Hill Park,Nature Hike,Agency Produced Event,Nature,Summer 2020,2,General Public,196.398,0.010183403089644497
+Urban Park Rangers,General Public,07/14/2020 10:00:00 AM,Bronx,Park,Crotona Park,Orienteering,Agency Produced Event,Nature,Summer 2020,0,General Public,127.5,0
+Recreation,Giovanni Feliciano,07/16/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,Sport,Summer 2020,22,Tot;#Children;#Teens,131,0.16793893129770993
+Urban Park Rangers,NA,07/17/2020 12:05:00 PM,Manhattan,Park,Central Park,Why is That Turtle Swimming Sideways,Community Based Event,Nature,Summer 2020,9,General Public,842.6,0.01068122478044149
+Urban Park Rangers,General Public,07/17/2020 04:00:00 PM,Manhattan,Park,Inwood Hill Park,Baby Birds,Community Based Event,Nature,Summer 2020,4,General Public,196.398,0.020366806179288995
+Urban Park Rangers,NA,07/17/2020 01:30:00 PM,Manhattan,Park,Central Park,What's that Bird,Community Based Event,Nature,Summer 2020,3,General Public,842.6,0.0035604082601471635
+Urban Park Rangers,General Public,07/18/2020 10:55:00 AM,Manhattan,Park,Morningside Park,Egret Extravaganza,Community Based Event,Nature,Summer 2020,38,General Public,29.888,1.2714132762312633
+Urban Park Rangers,General Public,07/19/2020 03:15:00 PM,Manhattan,Park,Morningside Park,Morningside Pond Pop-up,Community Based Event,Nature,Summer 2020,21,General Public,29.888,0.7026231263383297
+Recreation,Tasha Valentino,07/21/2020 12:00:00 PM,Bronx,Park,Soundview Park,Mindful Play,Agency Produced Event,Fitness,Summer 2020,1,Children,205.31,0.0048706833568749695
+Recreation,Friends of Soundview Park,07/17/2020 10:00:00 AM,Bronx,Park,Soundview Park,Photography and Art in Nature,Agency Produced Event,Arts/Culture,Summer 2020,0,Children,205.31,0
+Recreation,Tasha Valentino,07/14/2020 12:00:00 PM,Bronx,Park,Soundview Park,Mindful Play,Agency Produced Event,Fitness,Summer 2020,0,Children,205.31,0
+Urban Park Rangers,General Public,07/21/2020 10:15:00 AM,Bronx,Park,Crotona Park,Roaming Walking Stick Meet & Greet,Agency Produced Event,Nature,Summer 2020,6,General Public,127.5,0.047058823529411764
+Urban Park Rangers,General Public,07/21/2020 03:00:00 PM,Manhattan,Park,Inwood Hill Park,Garden Gala,Community Based Event,Nature,Summer 2020,3,General Public,196.398,0.015275104634466746
+Recreation,Giovanni Feliciano,07/21/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,Sport,Summer 2020,5,Tot;#Children;#Teens,131,0.03816793893129771
+Urban Park Rangers,General Public,07/23/2020 02:00:00 PM,Manhattan,Park,Inwood Hill Park,Salt Marsh Ecology,Community Based Event,Nature,Summer 2020,10,General Public,196.398,0.05091701544822249
+Recreation,NA,07/21/2018 08:30:00 PM,Bronx,Park,Crotona Park,Movies Under The Stars: Jumanji: Welcome To The Jungle,Community Based Event,Mobile Unit,Movies,0,General Public,127.5,0
+Urban Park Rangers,General Public,07/23/2020 02:40:00 AM,Bronx,Park,Crotona Park,Animal Olympics,Agency Produced Event,Nature,Summer 2020,0,Children,127.5,0
+Urban Park Rangers,General Public,07/23/2020 02:30:00 PM,Manhattan,Park,Inwood Hill Park,Oyster Cage Viewing,Community Based Event,Nature,Summer 2020,15,General Public,196.398,0.07637552317233373
+Recreation,FOSP,07/24/2020 10:00:00 AM,Bronx,Park,Soundview Park,Kid's Photography and Art in Nature,Agency Produced Event,Arts/Culture,Summer 2020,0,Children,205.31,0
+Urban Park Rangers,General Public,07/24/2020 04:40:00 PM,Manhattan,Park,Central Park,Are you allowed to feed the birds?,Community Based Event,Nature,Summer 2020,3,General Public,842.6,0.0035604082601471635
+Urban Park Rangers,General Public,07/24/2020 04:00:00 PM,Manhattan,Park,Central Park,Can I touch the Turtles?,Community Based Event,Nature,Summer 2020,7,General Public,842.6,0.008307619273676715
+Urban Park Rangers,General Public,07/25/2020 12:00:00 PM,Manhattan,Park,Morningside Park,Turtle Population Survey,Community Based Event,Nature,Summer 2020,15,General Public,29.888,0.5018736616702355
+Recreation,Arts Culture Fun,07/24/2020 06:30:00 PM,Bronx,Park,Soundview Park,Nature Painting,Agency Produced Event,Arts/Culture,Summer 2020,8,Adults;#Young Adult;#Teens;#Children,205.31,0.038965466854999756
+Urban Park Rangers,General Public,07/26/2020 03:00:00 PM,Manhattan,Park,Morningside Park,Morningside Pond Turtle Census,Community Based Event,Nature,Summer 2020,45,General Public,29.888,1.5056209850107065
+Recreation,Tasha Valentin,07/28/2020 12:00:00 PM,Bronx,Park,Soundview Park,Mindful Play,Agency Produced Event,Fitness,Summer 2020,0,Children,205.31,0
+Recreation,NA,07/14/2018 06:00:00 PM,Manhattan,Park,Highbridge Park,Taikoza Concert,Community Based Event,Performance,Music,65,General Public,131,0.4961832061068702
+Urban Park Rangers,General Public,07/25/2020 02:00:00 PM,Bronx,Park,Soundview Park,Animal Olympics,Agency Produced Event,Nature,Summer 2020,0,Children,205.31,0
+Urban Park Rangers,General Public,07/25/2020 03:00:00 PM,Bronx,Park,Soundview Park,Animal Olympics,Agency Produced Event,Nature,Summer 2020,0,Children,205.31,0
+Urban Park Rangers,General Public,07/29/2020 12:30:00 PM,Bronx,Park,Crotona Park,Lenape Story,Agency Produced Event,Nature,Summer 2020,6,Children,127.5,0.047058823529411764
+Recreation,Giovanni Feliciano,07/23/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,Sport,Summer 2020,9,Tot;#Children;#Teens,131,0.06870229007633588
+Urban Park Rangers,General Public,07/30/2020 02:00:00 PM,Manhattan,Park,Inwood Hill Park,Marsh Madness,Community Based Event,Nature,Summer 2020,8,General Public,196.398,0.04073361235857799
+Urban Park Rangers,General Public,07/30/2020 02:45:00 PM,Manhattan,Park,Inwood Hill Park,Marsh Madness,Community Based Event,Nature,Summer 2020,5,General Public,196.398,0.025458507724111245
+Urban Park Rangers,General Public,07/30/2020 03:00:00 PM,Manhattan,Park,Inwood Hill Park,Marsh Madness,Community Based Event,Nature,Summer 2020,9,General Public,196.398,0.045825313903400236
+Urban Park Rangers,General Public,07/30/2020 02:20:00 PM,Manhattan,Park,Inwood Hill Park,Marsh Madness,Community Based Event,Nature,Summer 2020,6,General Public,196.398,0.030550209268933492
+Recreation,NA,07/31/2020 10:00:00 AM,Bronx,Park,Soundview Park,Photography and Art at Soundview Park,Agency Produced Event,Arts/Culture,Summer 2020,0,Children,205.31,0
+Urban Park Rangers,General Public,07/31/2020 04:50:00 PM,Manhattan,Park,Central Park,Ichthyology: Fish Are More Than Food,Community Based Event,Nature,Summer 2020,6,General Public,842.6,0.007120816520294327
+Urban Park Rangers,General Public,08/01/2020 12:00:00 PM,Manhattan,Park,Morningside Park,How I Learned to Stop Worrying and Love the Algae,Community Based Event,Nature,Summer 2020,7,General Public,29.888,0.23420770877944325
+Urban Park Rangers,General Public,08/01/2020 10:45:00 AM,Bronx,Park,Soundview Park,Nature Journaling,Agency Produced Event,Nature,Summer 2020,0,Children,205.31,0
+Urban Park Rangers,General Public,08/02/2020 03:00:00 PM,Manhattan,Park,Morningside Park,Morningside Trash Pick-Up,Community Based Event,Nature,Summer 2020,3,General Public,29.888,0.1003747323340471
+Recreation,Tasha Valentino,08/03/2020 10:00:00 AM,Bronx,Park,Soundview Park,Mindful Play,Agency Produced Event,Fitness,Summer 2020,1,Children,205.31,0.0048706833568749695
+Recreation,Tasha Valentino,08/03/2020 12:00:00 AM,Bronx,Park,Soundview Park,Qigong,Agency Produced Event,Fitness,Summer 2020,2,Adults,205.31,0.009741366713749939
+Urban Park Rangers,General Public,08/05/2020 11:00:00 AM,Manhattan,Park,Inwood Hill Park,Fungus Amongus!,Community Based Event,Nature,Summer 2020,2,General Public,196.398,0.010183403089644497
+Recreation,NA,05/26/2018 08:15:00 PM,Bronx,Park,Crotona Park,Movies Under The Stars: Coco,Community Based Event,Mobile Unit,Movies,43,General Public,127.5,0.33725490196078434
+Urban Park Rangers,General Public,08/05/2020 11:00:00 AM,Manhattan,Park,Inwood Hill Park,Mushroom Kingdom,Local Event,Nature,Summer 2020,2,General Public,196.398,0.010183403089644497
+Recreation,"Arts, Culture, and Fun Mobile Van",08/05/2020 10:00:00 AM,Bronx,Park,Van Cortlandt Park,NA,Community Based Event,Arts/Culture,AC&F,11,Young Adult;#Adults,1146.43,0.009595003619933184
+Recreation,Zuleika Diaz,08/06/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,Sport,Summer 2020,8,Tot;#Children;#Teens;#Adults,131,0.061068702290076333
+Recreation,Zuleika Diaz,07/28/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,Sport,Summer 2020,2,Tot;#Teens,131,0.015267175572519083
+Recreation,Zuleika Diaz,07/30/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,Sport,Summer 2020,10,Tot;#Children;#Teens,131,0.07633587786259542
+Recreation,NA,08/07/2020 10:00:00 AM,Bronx,Park,Soundview Park,Photography and Art at Soundview Park,Agency Produced Event,Arts/Culture,Summer 2020,0,Children,205.31,0
+Urban Park Rangers,General Public,08/08/2020 12:00:00 PM,Bronx,Park,Crotona Park,Animal Olympics,Agency Produced Event,Nature,Summer 2020,0,Children,127.5,0
+Urban Park Rangers,General Public,08/08/2020 12:00:00 PM,Manhattan,Park,Morningside Park,Turtles N' Trees,Local Event,Nature,Summer 2020,18,General Public,29.888,0.60224839400428265
+Urban Park Rangers,General Public,08/09/2020 03:00:00 PM,Manhattan,Park,Morningside Park,Heron Watch,Local Event,Nature,Summer 2020,11,General Public,29.888,0.3680406852248394
+Recreation,Tasha Valentino,08/10/2020 10:00:00 AM,Bronx,Park,Soundview Park,Mindful Play,Agency Produced Event,Fitness,Summer 2020,0,Children,205.31,0
+Recreation,Tasha Valentino,08/10/2020 11:00:00 AM,Bronx,Park,Soundview Park,Qigong,Agency Produced Event,Fitness,Summer 2020,1,Adults,205.31,0.0048706833568749695
+Media Education,NA,07/21/2020 03:00:00 PM,Manhattan,Park,Inwood Hill Park,Photo Scavenger Hunt,Local Event,Arts/Culture,NA,3,General Public,196.398,0.015275104634466746
+Media Education,NA,07/23/2020 03:00:00 PM,Manhattan,Park,Inwood Hill Park,Nature Photography,Local Event,Arts/Culture,NA,1,General Public,196.398,0.005091701544822249
+Media Education,NA,07/14/2020 03:00:00 PM,Manhattan,Park,Inwood Hill Park,Photo Scavenger Hunt,Local Event,Arts/Culture,NA,2,General Public,196.398,0.010183403089644497
+Media Education,NA,07/16/2020 03:00:00 PM,Manhattan,Park,Inwood Hill Park,Nature Photography,Local Event,Arts/Culture,NA,1,General Public,196.398,0.005091701544822249
+Media Education,NA,07/28/2020 03:00:00 PM,Manhattan,Park,Inwood Hill Park,Photo Scavenger Hunt,Local Event,Arts/Culture,NA,1,General Public,196.398,0.005091701544822249
+Media Education,NA,08/10/2020 03:00:00 PM,Manhattan,Park,Inwood Hill Park,Nature Photography,Local Event,Arts/Culture,NA,3,General Public,196.398,0.015275104634466746
+Recreation,NA,05/26/2018 08:15:00 PM,Bronx,Park,Crotona Park,Movies Under The Stars: Coco,Community Based Event,Mobile Unit,Movies,31,General Public,127.5,0.24313725490196078
+Recreation,Zuleika Diaz,08/11/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,Sport,Summer 2020,5,Tot;#Children;#Teens;#Adults,131,0.03816793893129771
+Recreation,Giovanni Feliciano,08/04/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,Sport,Summer 2020,0,Tot;#Children;#Teens,131,0
+Recreation,Giovanni Feliciano,08/05/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,Sport,Summer 2020,3,Tot;#Children;#Teens,131,0.022900763358778626
+Recreation,Giovanni Feliciano,08/13/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,Sport,Summer 2020,5,Adults,131,0.03816793893129771
+Recreation,"Arts, Culture, and Fun Mobile Van",08/13/2020 10:30:00 AM,Bronx,Park,Van Cortlandt Park,NA,Community Based Event,Arts/Culture,AC&F,0,Tot;#Children;#Teens,1146.43,0
+Recreation,NA,08/14/2020 10:00:00 AM,Bronx,Park,Soundview Park,Photography and Art in Nature,Agency Produced Event,Arts/Culture,Summer 2020,12,Children;#Tot,205.31,0.058448200282499634
+Urban Park Rangers,General Public,08/14/2020 12:15:00 PM,Bronx,Park,Soundview Park,Natural Chalk Drawing,Agency Produced Event,Nature,Summer 2020,4,Children,205.31,0.019482733427499878
+Urban Park Rangers,General Public,08/14/2020 02:00:00 PM,Manhattan,Park,Inwood Hill Park,Seining at Dyckman Pier (The Great Fish Count),Agency Produced Event,Nature,Summer 2020,10,General Public,196.398,0.05091701544822249
+Recreation,Art Students League,08/13/2020 10:30:00 AM,Manhattan,Park,Inwood Hill Park,Arts Culture & Fun,Local Event,Arts/Culture,AC&F,0,Young Adult;#Adults;#Teens,196.398,0
+Urban Park Rangers,General Public,08/15/2020 02:00:00 PM,Bronx,Park,Highbridge Park,Highbridge History,Agency Produced Event,Nature,Summer 2020,0,General Public,131,0
+Urban Park Rangers,General Public,08/16/2020 03:00:00 PM,Manhattan,Park,Morningside Park,Turtle Time!,Community Based Event,Nature,Summer 2020,25,General Public,29.888,0.8364561027837258
+Recreation,Tasha Valentino,08/17/2020 11:00:00 AM,Bronx,Park,Soundview Park,Qigong at Soundview Park,Agency Produced Event,Fitness,Summer 2020,0,Adults,205.31,0
+Recreation,Tasha Valentino,08/17/2020 10:00:00 AM,Bronx,Park,Soundview Park,Mindful Play,Agency Produced Event,Fitness,Summer 2020,0,Children,205.31,0
+Recreation,"Arts, Culture, and Fun Mobile Unit",08/14/2020 10:00:00 AM,Bronx,Park,Soundview Park,NA,Community Based Event,Arts/Culture,NA,12,Tot,205.31,0.058448200282499634
+Recreation,NA,07/28/2018 08:30:00 PM,Bronx,Park,Van Cortlandt Park,Movies Under The Stars: Star Wars: The Last Jedi,Community Based Event,Mobile Unit,Movies,125,General Public,1146.43,0.10903413204469527
+Recreation,Zuleika Diaz,08/18/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,Sport,Summer 2020,8,Tot;#Children;#Teens;#Adults,131,0.061068702290076333
+Urban Park Rangers,General Public,08/19/2020 03:30:00 PM,Bronx,Park,Highbridge Park,Highbridge History,Community Based Event,Nature,Summer 2020,5,Children;#Young Adult;#Adults,131,0.03816793893129771
+Urban Park Rangers,General Public,08/20/2020 09:30:00 AM,Manhattan,Park,Inwood Hill Park,Hey aren't you those rangers from facebook live?,Community Based Event,Nature,Summer 2020,4,General Public,196.398,0.020366806179288995
+Urban Park Rangers,general public,08/20/2020 10:00:00 AM,Manhattan,Park,Central Park,What are you using for bait?,Community Based Event,Nature,Summer 2020,2,General Public,842.6,0.0023736055067647755
+Recreation,Art Students League,08/20/2020 10:30:00 AM,Manhattan,Park,Inwood Hill Park,"Arts, Culture & Fun",Local Event,Arts/Culture,AC&F,8,Children;#Adults;#Seniors,196.398,0.04073361235857799
+Urban Park Rangers,general public,08/20/2020 12:15:00 PM,Manhattan,Park,Central Park,When do the butterflies leave?,Community Based Event,Nature,Summer 2020,3,General Public,842.6,0.0035604082601471635
+Recreation,NYC Parks & Recreation Staff Sasha,08/21/2020 10:00:00 AM,Bronx,Park,Soundview Park,Photography and Art in Nature,Agency Produced Event,Arts/Culture,Summer 2020,2,Tot;#Children,205.31,0.009741366713749939
+Urban Park Rangers,General Public,08/21/2020 03:20:00 AM,Bronx,Park,Crotona Park,Animal Olympics,Agency Produced Event,Nature,Summer 2020,18,Children,127.5,0.1411764705882353
+Recreation,ACF,08/21/2020 06:30:00 PM,Bronx,Park,Soundview Park,ACF Nature Art,Agency Produced Event,Arts/Culture,Summer 2020,7,Adults,205.31,0.03409478349812479
+Recreation,Tasha Valentino,08/24/2020 11:00:00 AM,Bronx,Park,Soundview Park,Qigong,Agency Produced Event,Fitness,NA,0,Adults,205.31,0
+Urban Park Rangers,General Public,08/23/2020 03:00:00 PM,Manhattan,Park,Morningside Park,Morningside Park Cleanup,Community Based Event,Nature,Summer 2020,17,General Public,29.888,0.5687901498929336
+Recreation,Giovanni Feliciano,08/12/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,Sport,Summer 2020,8,Tot;#Children;#Teens;#Adults,131,0.061068702290076333
+Recreation,NA,08/04/2018 06:00:00 PM,Manhattan,Park,Inwood Hill Park,Movies Under the Stars - Valerian City of a Thousand Planets,Community Based Event,Mobile Unit,Movies,157,General Public,196.398,0.799397142537093
+Recreation,Zuleika Diaz,08/25/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,Sport,Summer 2020,9,Adults;#Tot,131,0.06870229007633588
+Recreation,Zuleika Diaz,08/20/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,Sport,Summer 2020,7,Tot;#Children;#Adults,131,0.05343511450381679
+Recreation,Zuleika Diaz,08/19/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,Sport,Summer 2020,3,Adults,131,0.022900763358778626
+Recreation,NA,08/04/2018 08:15:00 PM,Bronx,Park,Crotona Park,Movies Under The Stars: Black Panther,Community Based Event,Mobile Unit,Movies,33,General Public,127.5,0.25882352941176473
+Recreation,Tasha Valentino,08/31/2020 11:00:00 AM,Bronx,Park,Soundview Park,Qigong,Agency Produced Event,Fitness,Summer 2020,0,Adults,205.31,0
+Urban Park Rangers,General Public,08/26/2020 11:00:00 AM,Bronx,Park,Highbridge Park,"Ask A Ranger About: Highbridge, NYC Parks, NYC Water",Agency Produced Event,Nature,Summer 2020,9,General Public,131,0.06870229007633588
+Urban Park Rangers,General Public,08/27/2020 02:00:00 PM,Manhattan,Park,Inwood Hill Park,Raccoon Outreach,Community Based Event,Nature,Summer 2020,32,General Public,196.398,0.16293444943431196
+Recreation,Zuleika Diaz,08/26/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,KIM,Summer 2020,2,Children;#Teens,131,0.015267175572519083
+Urban Park Rangers,General Public,08/27/2020 02:45:00 PM,Manhattan,Park,Inwood Hill Park,Wildlife Walk,Community Based Event,Nature,Summer 2020,5,General Public,196.398,0.025458507724111245
+Urban Park Rangers,General Public,08/28/2020 09:40:00 AM,Manhattan,Park,Central Park,Mobbing Hawks,Community Based Event,Nature,Summer 2020,7,General Public,842.6,0.008307619273676715
+Recreation,Zuleika Diaz,08/25/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,KIM,Summer 2020,3,Children;#Teens;#Tot,131,0.022900763358778626
+Recreation,NA,08/28/2020 10:00:00 AM,Bronx,Park,Soundview Park,Photography and Art in Nature at Soundview Park,Agency Produced Event,Arts/Culture,Summer 2020,2,Children,205.31,0.009741366713749939
+Urban Park Rangers,General Public,08/28/2020 11:00:00 AM,Bronx,Park,Crotona Park,Storytelling,Agency Produced Event,Nature,Summer 2020,2,Children,127.5,0.01568627450980392
+Recreation,Tasha Valentino,08/31/2020 12:00:00 AM,Bronx,Park,Soundview Park,Mindful Play,Agency Produced Event,Fitness,Summer 2020,0,Children,205.31,0
+Recreation,NA,08/10/2018 08:00:00 PM,Bronx,Park,Pelham Bay Park,Movies Under The Stars: Star Wars: The Last Jedi,Community Based Event,Mobile Unit,Movies,65,General Public,2771.747,0.023450913809954517
+Urban Park Rangers,General Public,08/30/2020 03:00:00 PM,Manhattan,Park,Morningside Park,Tree ID Hike,Community Based Event,Nature,Summer 2020,5,General Public,29.888,0.16729122055674517
+Recreation,shapeup nyc,07/22/2020 10:35:00 AM,Bronx,Park,Crotona Park,bootcamp,Community Based Event,Fitness,Summer 2020,0,Adults,127.5,0
+Urban Park Rangers,General Public,09/02/2020 09:30:00 AM,Manhattan,Park,Central Park,Monumental Women,Community Based Event,Arts/Culture,Summer 2020,20,General Public,842.6,0.023736055067647758
+Urban Park Rangers,General Public,09/02/2020 02:00:00 PM,Manhattan,Park,Inwood Hill Park,Raccoons of Inwood Hill Park,Agency Produced Event,Nature,Summer 2020,20,General Public;#Seniors;#Teens;#Adults;#Children;#Tot,196.398,0.10183403089644498
+Urban Park Rangers,General Public,09/03/2020 02:00:00 PM,Manhattan,Park,Inwood Hill Park,Raccoon Reminders,Community Based Event,Nature,Summer 2020,20,General Public,196.398,0.10183403089644498
+Urban Park Rangers,General Public,09/03/2020 03:00:00 PM,Manhattan,Park,Inwood Hill Park,Watch Out for Wildlife,Agency Produced Event,Nature,Summer 2020,9,General Public,196.398,0.045825313903400236
+Urban Park Rangers,General Public,09/04/2020 10:00:00 AM,Manhattan,Park,Inwood Hill Park,Raccoon Outreach,Local Event,Nature,Summer 2020,17,General Public,196.398,0.08655892626197823
+Recreation,Bronx Recreation-Sasha,09/04/2020 10:00:00 AM,Bronx,Park,Soundview Park,Photogrphy and Art in Nature,Agency Produced Event,Arts/Culture,Summer 2020,20,Children;#Tot,205.31,0.0974136671374994
+Urban Park Rangers,General Public,09/04/2020 11:00:00 AM,Bronx,Park,Crotona Park,Ranger Games & Stories,Agency Produced Event,Nature,Summer 2020,7,Children,127.5,0.054901960784313725
+Urban Park Rangers,General Public,09/05/2020 03:20:00 PM,Manhattan,Park,Central Park,Meet the Rangers and the Corn Snake,Agency Produced Event,Nature,Summer 2020,8,General Public,842.6,0.009494422027059102
+Urban Park Rangers,General Public,09/06/2020 03:00:00 PM,Manhattan,Park,Morningside Park,Morningside Wildlife,Community Based Event,Nature,Summer 2020,35,General Public,29.888,1.1710385438972162
+Urban Park Rangers,General Public,09/07/2020 02:00:00 PM,Bronx,Park,Van Cortlandt Park,Nature Hike,Community Based Event,Nature,Summer 2020,4,Adults;#General Public,1146.43,0.0034890922254302483
+Urban Park Rangers,General Public,09/08/2020 08:35:00 AM,Manhattan,Park,Central Park,Cruisin' Cormorant,Community Based Event,Nature,Summer 2020,8,General Public,842.6,0.009494422027059102
+Urban Park Rangers,General Public,09/08/2020 04:20:00 PM,Bronx,Park,Van Cortlandt Park,Ranger Says,Community Based Event,Nature,Summer 2020,12,Children;#General Public,1146.43,0.010467276676290745
+Recreation,NA,05/12/2018 08:00:00 PM,Bronx,Park,Van Cortlandt Park,Movies Under The Stars: Coco,Community Based Event,Mobile Unit,Movies,0,General Public,1146.43,0
+Urban Park Rangers,general public,09/09/2020 09:30:00 AM,Manhattan,Park,Central Park,There's a Hawk above your head eating a rat!,Community Based Event,Nature,Summer 2020,17,General Public,842.6,0.020175646807500593
+NA,Garfield Richards,05/07/2022 02:00:00 PM,Bronx,NA,Pelham Bay Park,Learn To Ride,NA,Sport,Learn to Ride,0,NA,2771.747,0
+Urban Park Rangers,General Public,09/09/2020 02:40:00 PM,Manhattan,Park,Inwood Hill Park,Raccoon Outreach,Community Based Event,Nature,Summer 2020,17,General Public,196.398,0.08655892626197823
+Urban Park Rangers,General Public,09/10/2020 02:00:00 PM,Manhattan,Park,Inwood Hill Park,Bug-o-rama!,Community Based Event,Nature,Summer 2020,29,General Public,196.398,0.14765934479984522
+Urban Park Rangers,General Public,09/11/2020 02:00:00 PM,Bronx,Park,Pelham Bay Park,Backyard Bass,Agency Produced Event,Nature,Summer 2020,12,Tot;#Children,2771.747,0.004329399472606988
+Urban Park Rangers,General Public,09/12/2020 10:00:00 AM,Manhattan,Park,Inwood Hill Park,What Do Rangers Do?,Local Event,Nature,Summer 2020,15,General Public,196.398,0.07637552317233373
+Urban Park Rangers,general public,09/12/2020 02:00:00 PM,Manhattan,Park,Central Park,What are ya'll doing; a hummingbird and fishing line pop up,Community Based Event,Nature,Summer 2020,18,General Public,842.6,0.02136244956088298
+Urban Park Rangers,General Public,09/11/2020 01:15:00 PM,Manhattan,Park,Central Park,"Fishing is fine, but be smart with your line!",Community Based Event,Nature,Summer 2020,16,General Public,842.6,0.018988844054118204
+Urban Park Rangers,General Public,09/12/2020 02:00:00 PM,Manhattan,Park,Central Park,That is a Rat and a Squirrel under Your Stroller,Community Based Event,Nature,Summer 2020,18,General Public,842.6,0.02136244956088298
+Urban Park Rangers,Public,09/13/2020 03:00:00 PM,Manhattan,Park,Morningside Park,Something's Fishy @ Morningside Park,Community Based Event,Nature,Summer 2020,27,General Public,29.888,0.903372591006424
+Recreation,NA,08/28/2020 09:00:00 AM,Bronx,Park,Van Cortlandt Park,Hiking,Community Based Event,Fitness,Summer 2020,4,Seniors,1146.43,0.0034890922254302483
+Urban Park Rangers,General Public,09/14/2020 02:00:00 PM,Bronx,Park,Van Cortlandt Park,Nature Hike,Community Based Event,Nature,Summer 2020,16,Children;#Tot;#Adults;#Seniors;#General Public,1146.43,0.013956368901720993
+Recreation,NA,09/04/2020 09:00:00 AM,Bronx,Park,Van Cortlandt Park,Hiking,Community Based Event,Fitness,Summer 2020,4,Seniors,1146.43,0.0034890922254302483
+Urban Park Rangers,General Public,09/15/2020 03:00:00 PM,Manhattan,Park,Inwood Hill Park,Inwood Gardening,Local Event,Nature,Summer 2020,0,General Public,196.398,0
+Urban Park Rangers,General Public,09/16/2020 02:00:00 PM,Bronx,Park,Soundview Park,Stick Bug Fun,Community Based Event,Nature,Summer 2020,7,Children;#Adults;#Tot;#General Public,205.31,0.03409478349812479
+Urban Park Rangers,General Public,09/16/2020 04:20:00 PM,Manhattan,Park,Central Park,Herons Fish Too,Community Based Event,Nature,Summer 2020,11,General Public,842.6,0.013054830287206266
+Urban Park Rangers,public,09/16/2020 02:45:00 PM,Manhattan,Park,Morningside Park,Buggin Out,Community Based Event,Nature,Summer 2020,28,General Public,29.888,0.936830835117773
+Urban Park Rangers,General Public,09/16/2020 02:15:00 PM,Manhattan,Park,Morningside Park,Turtles on the Rocks,Community Based Event,Nature,Summer 2020,12,General Public,29.888,0.4014989293361884
+Recreation,Zuleika Diaz,09/08/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,KIM,Summer 2020,5,Children;#Tot;#Teens,131,0.03816793893129771
+Urban Park Rangers,General Public,09/18/2020 10:00:00 AM,Manhattan,Park,Inwood Hill Park,Raccoon Outreach,Local Event,Nature,Summer 2020,6,General Public,196.398,0.030550209268933492
+Urban Park Rangers,General Public,09/19/2020 10:00:00 AM,Manhattan,Park,Inwood Hill Park,Raptor Rhapsody,Local Event,Nature,Summer 2020,9,General Public,196.398,0.045825313903400236
+Urban Park Rangers,General Public,09/18/2020 02:00:00 PM,Bronx,Park,Pelham Bay Park,Monarch Release,Agency Produced Event,Nature,Summer 2020,13,General Public,2771.747,0.004690182761990904
+Urban Park Rangers,General Public,09/21/2020 02:00:00 PM,Bronx,Park,Van Cortlandt Park,Nature Hike,Agency Produced Event,Nature,Summer 2020,0,General Public,1146.43,0
+Urban Park Rangers,General Public,09/21/2020 10:30:00 AM,Manhattan,Park,Inwood Hill Park,"Earth, Wig, and Firewood",Community Based Event,Nature,Summer 2020,3,General Public,196.398,0.015275104634466746
+Urban Park Rangers,General Public,09/22/2020 08:40:00 AM,Manhattan,Park,Central Park,Birding Bonanza,Community Based Event,Nature,Summer 2020,47,General Public,842.6,0.055779729408972224
+Urban Park Rangers,General Public,09/22/2020 05:00:00 PM,Manhattan,Park,Inwood Hill Park,Raptors on Hudson,Local Event,Nature,Summer 2020,9,General Public,196.398,0.045825313903400236
+Recreation,Puppet Mobile,09/22/2020 07:00:00 PM,Manhattan,Park,Highbridge Park,Puppet Making Workshop,Local Event,Arts/Culture,Summer 2020,0,Children;#Tot,131,0
+Recreation,ACF,09/23/2020 10:00:00 AM,Bronx,Park,Van Cortlandt Park,Nature Art Watercolor at Van Cortlandt Park with Amy Digi,Agency Produced Event,Arts/Culture,Summer 2020,12,Children;#Adults,1146.43,0.010467276676290745
+Urban Park Rangers,General Public,09/18/2020 05:00:00 PM,Bronx,Park,Pelham Bay Park,Spiders are cool,Agency Produced Event,Nature,Summer 2020,4,Adults;#Children,2771.747,0.0014431331575356626
+Recreation,NA,05/22/2018 12:00:00 PM,Bronx,Park,Van Cortlandt Park,Play at Van Courtland,Community Based Event,Mobile Unit,Play,70,Children,1146.43,0.06105911394502935
+Urban Park Rangers,General Public,09/26/2020 11:00:00 AM,Bronx,Park,Pelham Bay Park,Birding: Hawk Watch,Agency Produced Event,Nature,Summer 2020,12,General Public,2771.747,0.004329399472606988
+Urban Park Rangers,General Public,09/27/2020 01:00:00 PM,Bronx,Park,Van Cortlandt Park,Nature Hike & Craft,Agency Produced Event,Nature,Summer 2020,14,Tot;#Children;#Adults;#General Public,1146.43,0.01221182278900587
+Urban Park Rangers,General Public,09/30/2020 08:20:00 AM,Manhattan,Park,Central Park,What I Wouldn't Feed a Wood Duck,Community Based Event,Nature,Summer 2020,7,General Public,842.6,0.008307619273676715
+NA,Council Member Farias,10/22/2022 12:00:00 PM,Bronx,NA,Soundview Park,Fall Festival,NA,Family Festival,Music,289,NA,205.31,1.4076274901368662
+Urban Park Rangers,General Public,09/30/2020 03:20:00 PM,Manhattan,Park,Central Park,"Stop, Hawk, and More!",Community Based Event,Nature,Summer 2020,13,General Public,842.6,0.015428435793971042
+Recreation,Zuleika Diaz,09/17/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,KIM,Summer 2020,4,Children;#Tot;#Teens,131,0.030534351145038167
+Urban Park Rangers,NA,10/02/2020 12:00:00 AM,Manhattan,Park,Central Park,NA,Community Based Event,Nature,NA,0,General Public,842.6,0
+Recreation,Zuleika Diaz,09/15/2020 10:30:00 AM,Manhattan,Park,Highbridge Park,KIM Outdoor Programming,Community Based Event,KIM,Summer 2020,4,Children;#Teens;#Tot,131,0.030534351145038167
+Urban Park Rangers,General Public,10/04/2020 10:00:00 AM,Manhattan,Park,Inwood Hill Park,Volunteer Cleanup @ Inwood Hill Park,Community Based Event,Nature,Summer 2020,4,General Public,196.398,0.020366806179288995
+Recreation,ACF,10/10/2020 12:00:00 PM,Bronx,Park,Soundview Park,Watercolor Painting and Popsicle Sticks Sculptures,Agency Produced Event,Arts/Culture,Summer 2020,6,Children;#Adults,205.31,0.029224100141249817
+Recreation,NA,10/23/2020 12:00:00 PM,Bronx,Park,Pelham Bay Park,ACF Watercolor and Still Life with Ian Gabriel,Agency Produced Event,Arts/Culture,Summer 2020,9,Children;#Young Adult;#Adults,2771.747,0.0032470496044552408
+Recreation,NYPD,06/02/2018 12:00:00 AM,Manhattan,Park,Highbridge Park,NA,Community Based Event,Sport,NA,21,Teens,131,0.16030534351145037
+Recreation,PS 107,05/19/2021 11:00:00 AM,Bronx,Park,Soundview Park,Monologues for Kids,Agency Produced Event,Arts/Culture,Summer 2020,14,Children,205.31,0.06818956699624958
+Urban Park Rangers,Central Park Conservancy,05/22/2021 08:00:00 AM,Manhattan,Park,Central Park,Dog Community Outreach,Local Event,Nature,NA,33,General Public,842.6,0.0391644908616188
+Recreation,NA,05/26/2021 11:00:00 AM,Bronx,Park,Soundview Park,Monologues for Kids,Agency Produced Event,Arts/Culture,NA,15,Children,205.31,0.07306025035312454
+Recreation,NA,06/03/2021 11:00:00 AM,Bronx,Playground,Soundview Park,POP UP SITE,Community Based Event,Mobile Unit,Play,20,General Public,205.31,0.0974136671374994
+Recreation,PS 107,06/02/2021 11:00:00 AM,Bronx,Park,Soundview Park,Monologues for Kids,Agency Produced Event,Arts/Culture,Summer 2020,19,Children,205.31,0.09254298378062442
+Recreation,PS 107,06/09/2021 11:00:00 AM,Bronx,Park,Soundview Park,Monologues for Kids,Agency Produced Event,Arts/Culture,Summer 2020,12,Children,205.31,0.058448200282499634
+Recreation,Arts Culture Fun Dancing in the Streets,06/05/2021 01:30:00 PM,Bronx,Park,Soundview Park,Dancing in the Streets,Agency Produced Event,Arts/Culture,Summer 2020,12,General Public,205.31,0.058448200282499634
+Recreation,Art Students League,04/27/2021 12:00:00 PM,Manhattan,Park,Morningside Park,ACF Watercolor Workshop,Community Based Event,Arts/Culture,AC&F,12,Adults;#General Public,29.888,0.4014989293361884
+Recreation,Art Students League,05/11/2021 12:00:00 PM,Manhattan,Park,Inwood Hill Park,ACF Watercolor Workshop,Community Based Event,Arts/Culture,AC&F,9,Adults;#General Public,196.398,0.045825313903400236
+Recreation,PS 107,06/16/2021 11:00:00 AM,Bronx,Park,Soundview Park,Monologues for Kids,Agency Produced Event,Arts/Culture,NA,16,Children,205.31,0.07793093370999951
+Recreation,ACF Jazz Foundation of America,06/16/2021 01:00:00 PM,Bronx,Park,Soundview Park,ACF Annette St. John and Friends Jazz Concert,Agency Produced Event,Arts/Culture,Summer 2020,19,General Public,205.31,0.09254298378062442
+Recreation,ACF Art Students League,06/19/2021 03:00:00 PM,Bronx,Park,Soundview Park,ACF Dancing in the Streets,Agency Produced Event,Arts/Culture,AC&F,27,General Public,205.31,0.13150845063562416
+Recreation,PS 107 Ms. Hamm,06/23/2021 11:00:00 AM,Bronx,Park,Soundview Park,Monologues for Kids,Agency Produced Event,Arts/Culture,Summer 2020,11,Children,205.31,0.053577516925624666
+Recreation,PS 107,06/30/2021 11:00:00 AM,Bronx,Park,Soundview Park,Monologues for Kids,Agency Produced Event,Arts/Culture,NA,0,Children,205.31,0
+Recreation,NA,07/22/2017 06:00:00 PM,Bronx,Park,Pelham Bay Park,AC&F Taikoza drummers performance,Local Event,Arts/Culture,AC&F,120,General Public,2771.747,0.04329399472606988
+Recreation,PS 107,07/07/2021 11:00:00 AM,Bronx,Park,Soundview Park,Monologues for Kids,Agency Produced Event,Arts/Culture,Summer 2020,0,Children,205.31,0
+Recreation,ACF Art Students League,07/07/2021 03:00:00 PM,Bronx,Park,Soundview Park,ACF Watercolor Workshop,Agency Produced Event,Arts/Culture,AC&F,12,General Public,205.31,0.058448200282499634
+Recreation,ACF Art Students League,07/14/2021 03:00:00 PM,Bronx,Park,Soundview Park,ACF Watercolor Workshop,Agency Produced Event,Arts/Culture,Play,6,General Public,205.31,0.029224100141249817
+Recreation,PS 107,07/14/2021 10:00:00 AM,Bronx,Park,Soundview Park,Monologues for Kids,Agency Produced Event,Arts/Culture,Summer 2020,0,Children,205.31,0
+Public Programs,N/A,07/15/2021 09:00:00 AM,Bronx,Park,Crotona Park,Movies Under the Stars - Sonic the Hedgehog,Community Based Event,Mobile Unit,M.U.T.S,230,Children;#Young Adult;#Adults;#Teens;#Adaptive;#Seniors,127.5,1.803921568627451
+Recreation,NA,08/11/2018 08:00:00 PM,Bronx,Park,Soundview Park,Movies Under The Stars: Star Wars:The Last Jedi,Community Based Event,Mobile Unit,Movies,0,General Public,205.31,0
+Public Programs,N/A,07/16/2021 09:00:00 AM,Bronx,Park,Pelham Bay Park,Movies Under the Stars - Onward,Community Based Event,Mobile Unit,M.U.T.S,250,Tot;#Children;#Young Adult;#Adults;#Teens;#Adaptive;#Seniors,2771.747,0.09019582234597891
+Recreation,NA,07/16/2021 11:00:00 AM,Bronx,Playground,Pelham Bay Park,POP UP SITE,Community Based Event,Mobile Unit,Play,36,General Public,2771.747,0.012988198417820963
+Recreation,ACF Art students League,07/21/2021 03:00:00 PM,Bronx,Park,Soundview Park,ACF Watercolor Workshop,Agency Produced Event,Arts/Culture,AC&F,5,General Public,205.31,0.02435341678437485
+Recreation,PS 107 Summer Rising,07/21/2021 10:00:00 AM,Bronx,Park,Soundview Park,Monologues/Theater Games for Kids,Agency Produced Event,Arts/Culture,Summer 2020,20,Children,205.31,0.0974136671374994
+Recreation,MOME,07/22/2021 08:00:00 PM,Manhattan,Park,Highbridge Park,Movies Under the Stars: Ghostbusters,Community Based Event,Mobile Unit,M.U.T.S,185,General Public,131,1.4122137404580153
+Recreation,PS 107 Summer Rising,07/28/2021 10:00:00 AM,Bronx,Park,Soundview Park,Monologues for Kids,Agency Produced Event,Arts/Culture,Summer 2020,13,Children,205.31,0.0633188836393746
+Recreation,ACF Art Students League,07/28/2021 03:00:00 PM,Bronx,Park,Soundview Park,ACF Watercolor Workshop,Agency Produced Event,Arts/Culture,AC&F,10,General Public,205.31,0.0487068335687497
+Recreation,ACF Art Students League,08/04/2021 02:00:00 PM,Bronx,Park,Pelham Bay Park,ACF Watercolor Workshop,Agency Produced Event,Arts/Culture,AC&F,11,General Public,2771.747,0.0039686161832230725
+Recreation,PS 107,08/04/2021 10:00:00 AM,Bronx,Park,Soundview Park,Monologues/Theater for Kids,Agency Produced Event,Arts/Culture,Summer 2020,17,Children,205.31,0.08280161706687449
+Public Programs,N/A,08/05/2021 09:00:00 PM,Bronx,Park,Pelham Bay Park,Movies Under the Stars - Spiderman: Into the SpiderVerse,Community Based Event,Mobile Unit,M.U.T.S,185,Children;#Young Adult;#Adults;#Teens,2771.747,0.0667449085360244
+Recreation,PS 107 Summer Rising,08/11/2021 10:00:00 AM,Bronx,Park,Soundview Park,Monologues/Theater Games for Kids,Agency Produced Event,Arts/Culture,Summer 2020,0,Children,205.31,0
+Recreation,NA,07/24/2018 08:00:00 AM,Bronx,Park,Van Cortlandt Park,Harmony Day,Agency Produced Event,Mobile Unit,NA,300,Children;#General Public,1146.43,0.26168191690726866
+Recreation,NA,08/12/2021 11:00:00 AM,Bronx,Playground,Pelham Bay Park,POP UP EVENT,Community Based Event,Mobile Unit,Play,45,General Public,2771.747,0.016235248022276206
+Recreation,NA,08/15/2018 11:00:00 AM,Bronx,Park,Crotona Park,Graham's Back to School & Family Fun Day,Community Based Event,Mobile Unit,Play,20,Children;#General Public,127.5,0.1568627450980392
+Public Programs,N/A,08/12/2021 09:00:00 PM,Bronx,Park,Pelham Bay Park,Movies Under the Stars - Jumanji: The Next Level,Community Based Event,Mobile Unit,M.U.T.S,0,Children;#Young Adult;#Adults;#Teens;#Adaptive;#Seniors,2771.747,0
+Recreation,PS 107,08/18/2021 10:00:00 AM,Bronx,Park,Soundview Park,Monologues for Kids,Agency Produced Event,Arts/Culture,NA,0,Children,205.31,0
+Recreation,NA,08/19/2021 11:00:00 AM,Bronx,Park,Crotona Park,POP UP EVENT,Community Based Event,Mobile Unit,Play,29,General Public,127.5,0.22745098039215686
+Public Programs,N/A,08/19/2021 09:00:00 PM,Bronx,Park,Crotona Park,Movies Under the Stars - Scoob!,Community Based Event,Mobile Unit,M.U.T.S,25,Children;#Young Adult;#Adults;#Teens;#Adaptive;#Seniors,127.5,0.19607843137254902
+Recreation,PS 107,08/25/2021 10:00:00 AM,Bronx,Park,Soundview Park,Monologues for Kids,Agency Produced Event,Arts/Culture,Summer 2020,0,Children,205.31,0
+Recreation,PS 107,09/08/2021 10:00:00 AM,Bronx,Park,Soundview Park,Monologues and Theater for Kids,Agency Produced Event,Arts/Culture,Summer 2020,0,Children,205.31,0
+Recreation,PS 107,09/15/2021 10:00:00 AM,Bronx,Park,Soundview Park,Monologues for Kids,Agency Produced Event,Arts/Culture,Summer 2020,0,Children,205.31,0
+Recreation,NA,08/23/2018 11:00:00 AM,Manhattan,Park,Highbridge Park,Summer Camp Finale,Community Based Event,Academic/Out of School time,NA,360,Children;#Teens,131,2.7480916030534353
+Recreation,PS 107,09/22/2021 10:00:00 AM,Bronx,Park,Soundview Park,Monologues and Theater for Kids,Agency Produced Event,Arts/Culture,Summer 2020,0,Children,205.31,0
+Recreation,NA,05/22/2018 12:00:00 PM,Bronx,Park,Van Cortlandt Park,Play Mobile at VC,Community Based Event,Mobile Unit,Play,100,General Public;#Children,1146.43,0.08722730563575622
+Urban Park Rangers,General Public,09/26/2021 12:00:00 PM,Bronx,Park,Pelham Bay Park,Native American Festival,Community Based Event,Family Festival,NA,138,General Public,2771.747,0.04978809393498036
+Recreation,PS 107,09/29/2021 10:00:00 AM,Bronx,Park,Soundview Park,Monologues and Theater Games for Kids,Agency Produced Event,Arts/Culture,Summer 2020,0,Children,205.31,0
+Recreation,NA,08/29/2018 08:00:00 PM,Manhattan,Park,Morningside Park,Movies Under the Stars - Jumanji,Community Based Event,Mobile Unit,Movies,25,General Public,29.888,0.8364561027837258
+Recreation,NA,09/14/2018 07:00:00 PM,Bronx,Park,Van Cortlandt Park,Movies Under The Stars: Black Panther,Community Based Event,Mobile Unit,Movies,42,General Public,1146.43,0.03663546836701761
+Recreation,Alvin Ailey Extension,09/22/2018 03:00:00 PM,Manhattan,Park,Highbridge Park,ACF Alvin Ailey: Revelations,Community Based Event,Arts/Culture,Dance,15,General Public,131,0.11450381679389313
+Recreation,NA,09/22/2018 07:00:00 PM,Bronx,Park,Crotona Park,Movies Under The Stars,Community Based Event,Mobile Unit,Movies,21,General Public,127.5,0.16470588235294117
+Recreation,NA,10/05/2018 06:30:00 PM,Bronx,Park,Crotona Park,Movies Under The Stars: Boss Baby,Community Based Event,Mobile Unit,Movies,40,General Public,127.5,0.3137254901960784
+Recreation,NA,10/12/2018 07:30:00 PM,Manhattan,Park,Morningside Park,Movies Under the Stars - Biography Frederick Douglass,Community Based Event,Mobile Unit,Movies,17,General Public,29.888,0.5687901498929336
+Urban Park Rangers,NYC Audobon,12/16/2018 08:00:00 AM,Manhattan,Park,Central Park,Chritmas Bird Count,Community Based Event,Academic/Out of School time,NA,48,General Public,842.6,0.056966532162354616
+Urban Park Rangers,Parks Marketing and Special Events,01/26/2019 11:00:00 AM,Manhattan,Park,Central Park,Winter Jam,Agency Produced Event,Family Festival,NA,1000,General Public,842.6,1.1868027533823877
+Urban Park Rangers,Urban Park Rangers,05/04/2019 01:00:00 PM,Manhattan,Park,Highbridge Park,Urban Wildlife Festival,Agency Produced Event,Family Festival,NA,1250,General Public,131,9.541984732824428
+Recreation,NA,06/15/2018 08:30:00 PM,Bronx,Park,Pelham Bay Park,Movies Under The Stars: Wonder Woman,Community Based Event,Mobile Unit,Movies,58,General Public,2771.747,0.020925430784267108
+Recreation,NA,06/16/2018 11:00:00 AM,Bronx,Park,Crotona Park,2018 Family Engagement Workshop,Community Based Event,Mobile Unit,Play,100,Children,127.5,0.7843137254901961
+NA,Pelham Bay Park Admin,04/24/2022 11:00:00 AM,Bronx,NA,Pelham Bay Park,Playmoblie: Earth Fest,NA,Mobile Unit,Play,45,NA,2771.747,0.016235248022276206
+NA,CM Dinowitz,04/29/2022 08:30:00 AM,Bronx,NA,Van Cortlandt Park,Movies Under the Stars: Goonies,NA,Mobile Unit,M.U.T.S,37,NA,1146.43,0.0322741030852298
+NA,Bronx Borough President Vanessa L Gibson,05/13/2022 07:00:00 PM,Bronx,NA,Van Cortlandt Park,Silent Dicso,NA,Family Festival,Music,90,NA,1146.43,0.07850457507218059
+NA,NA,06/11/2022 07:00:00 PM,Bronx,NA,Soundview Park,NYC Mayors Office of Media & Entertainment/Big Band Salsa Music,NA,Performance,Music,80,NA,205.31,0.3896546685499976
+NA,CM Farias,06/15/2022 09:00:00 PM,Bronx,NA,Soundview Park,Movies Under the Stars: Raya and the Last Dragon,NA,Mobile Unit,M.U.T.S,175,NA,205.31,0.8523695874531196
+NA,Kelly Adams,06/17/2022 06:00:00 PM,Bronx,NA,Crotona Park,Martin Van Buren,NA,--None--,--None--,69,NA,127.5,0.5411764705882353
+NA,NA,06/18/2022 02:00:00 PM,Bronx,NA,Van Cortlandt Park,Learn To Ride,NA,Sport,Learn to Ride,50,NA,1146.43,0.04361365281787811
+NA,CM Velazquez,06/22/2022 09:00:00 PM,Bronx,NA,Pelham Bay Park,Movies Under the Stars: Encanto,NA,Mobile Unit,M.U.T.S,200,NA,2771.747,0.07215665787678313
+NA,NA,06/30/2022 09:00:00 PM,Bronx,NA,Pelham Bay Park,Movies Under the Stars: Megamind,NA,Mobile Unit,M.U.T.S,200,NA,2771.747,0.07215665787678313
+NA,NA,07/06/2022 08:30:00 PM,Manhattan,NA,Inwood Hill Park,Movies Under the Stars: Luca,NA,Mobile Unit,M.U.T.S,NA,NA,196.398,NA
+NA,NA,07/17/2022 06:37:00 PM,Manhattan,NA,Central Park,Play Mobile: United Disability Festival,NA,Mobile Unit,Play,250,NA,842.6,0.29670068834559693
+NA,NYPD,07/19/2022 09:30:00 AM,Bronx,NA,Van Cortlandt Park,Playmoblie:Harmony Day VC Park,NA,Mobile Unit,Play,2500,NA,1146.43,2.1806826408939055
+NA,Bronx Recreation,07/20/2022 11:00:00 AM,Bronx,NA,Pelham Bay Park,Playmobile:  Sandcastle Event Orchard Beach,NA,Mobile Unit,Play,0,NA,2771.747,0
+NA,NA,07/21/2022 08:30:00 PM,Manhattan,NA,Highbridge Park,Movies Under The Stars: Snake Eyes,NA,Mobile Unit,M.U.T.S,110,NA,131,0.8396946564885496
+NA,NA,07/23/2022 09:00:00 PM,Bronx,NA,Crotona Park,Movies Under the Stars: Space Jam: A New Legacy,NA,--None--,--None--,25,NA,127.5,0.19607843137254902
+NA,NA,07/28/2022 06:37:00 PM,Manhattan,NA,Central Park,Play Mobile: Safari Playground,NA,Mobile Unit,Play,25,NA,842.6,0.029670068834559696
+NA,VC Administration,08/04/2022 08:57:00 AM,Bronx,NA,Van Cortlandt Park,Movies Under the Stars: The Birds,NA,Mobile Unit,M.U.T.S,200,NA,1146.43,0.17445461127151243
+NA,NA,08/06/2022 08:30:00 PM,Manhattan,NA,Inwood Hill Park,Movies Under the Stars: Luca,NA,Mobile Unit,M.U.T.S,40,NA,196.398,0.20366806179288996
+NA,NA,08/06/2022 08:30:00 PM,Manhattan,NA,Inwood Hill Park,Movies Under the Stars: Luca,NA,--None--,--None--,40,NA,196.398,0.20366806179288996
+NA,Constance Baker Motley Summer Camp,08/09/2022 06:00:00 PM,Manhattan,NA,Central Park,Play Mobile: Heckscher Playground,NA,Mobile Unit,Play,67,NA,842.6,0.07951578447661999
+NA,VC Administration,08/11/2022 09:02:00 AM,Bronx,NA,Van Cortlandt Park,Movies Under the Stars: The Meg,NA,Mobile Unit,M.U.T.S,200,NA,1146.43,0.17445461127151243
+NA,NA,08/16/2022 10:00:00 AM,Bronx,NA,Crotona Park,KIM: Martin Van Buren Playground,NA,--None--,--None--,0,NA,127.5,0
+NA,Pelham Bay/Orchard Beach Administration,08/18/2022 09:08:00 AM,Bronx,NA,Pelham Bay Park,Movies Under the Stars: Encanto,NA,Mobile Unit,M.U.T.S,0,NA,2771.747,0
+NA,Crotona Park Administration,08/19/2022 09:10:00 AM,Bronx,NA,Crotona Park,Movies Under the Stars: Sider-Man: No way Home,NA,Mobile Unit,M.U.T.S,0,NA,127.5,0
+NA,Pelham Bay/Orchard Beach Administration,08/26/2022 09:17:00 AM,Bronx,NA,Pelham Bay Park,Movies Under the Stars: Shang Chi and the Legend of the Ten Rings,NA,Mobile Unit,M.U.T.S,500,NA,2771.747,0.18039164469195781
+NA,CM Salamanca,09/01/2022 11:37:00 AM,Bronx,NA,Soundview Park,Movies Under the Stars: Sonic 2,NA,Mobile Unit,M.U.T.S,120,NA,205.31,0.5844820028249963
+NA,CM Farias,09/09/2022 11:43:00 AM,Bronx,NA,Soundview Park,Movies Under the Stars: Spider-Man: No Way Home,NA,Mobile Unit,M.U.T.S,75,NA,205.31,0.3653012517656227
+NA,NA,09/17/2022 08:00:00 PM,Manhattan,NA,Morningside Park,Movies Under the Stars: West Side Story,NA,Mobile Unit,M.U.T.S,150,NA,29.888,5.0187366167023555
+NA,NA,10/26/2022 02:00:00 PM,Bronx,NA,Pelham Bay Park,Halloween Event,NA,--None--,--None--,75,NA,2771.747,0.027058746703793674
+NA,NA,05/17/2023 09:00:00 AM,Bronx,NA,Van Cortlandt Park,Nyc Kids Festival,NA,Mobile Unit,Play,450,NA,1146.43,0.39252287536090297
+NA,CM Dinowitz,05/17/2023 08:30:00 PM,Bronx,NA,Van Cortlandt Park,MUTS: DC League of Super-Pets,NA,Mobile Unit,M.U.T.S,0,NA,1146.43,0
+NA,NA,05/20/2023 04:00:00 PM,Manhattan,NA,Highbridge Park,SNL Highbridge Rec. Center,NA,Saturday Night Lights,--None--,4,NA,131,0.030534351145038167
+NA,NA,05/31/2023 07:30:00 PM,Manhattan,NA,Highbridge Park,Movies Under the Stars: Vivo,NA,Mobile Unit,M.U.T.S,65,NA,131,0.4961832061068702
+NA,NA,06/17/2023 08:00:00 PM,Manhattan,NA,Highbridge Park,Movies Under the Stars: Encanto,NA,Mobile Unit,M.U.T.S,40,NA,131,0.3053435114503817
+NA,NA,06/24/2023 12:00:00 PM,Bronx,NA,Soundview Park,Playmobile,NA,Mobile Unit,Play,150,NA,205.31,0.7306025035312455
+NA,NA,06/24/2023 12:00:00 PM,Bronx,NA,Soundview Park,Family Day,NA,Family Festival,Music,150,NA,205.31,0.7306025035312455
+NA,NA,06/24/2023 05:00:00 PM,Bronx,NA,Soundview Park,New York Music Month Concert Series,NA,Arts/Culture,Music,1400,NA,205.31,6.818956699624957
+NA,NA,06/24/2023 08:30:00 PM,Manhattan,NA,Morningside Park,Movies Under the Stars: Black Panther: Wakanda Forever,NA,Mobile Unit,M.U.T.S,125,NA,29.888,4.182280513918629
+NA,NA,06/26/2023 04:00:00 PM,Bronx,NA,Van Cortlandt Park,Skate Night,NA,Sport,Skating,35,NA,1146.43,0.030529556972514676
+NA,NA,06/26/2023 04:00:00 PM,Bronx,NA,Van Cortlandt Park,Skate Night,NA,Sport,Skating,65,NA,1146.43,0.05669774866324154
+NA,NA,06/28/2023 04:00:00 PM,Bronx,NA,Highbridge Park,Silent Disco,NA,Arts/Culture,Dance,12,NA,131,0.0916030534351145
+NA,NA,06/29/2023 04:00:00 PM,Bronx,NA,Highbridge Park,Silent Disco,NA,Arts/Culture,Dance,15,NA,131,0.11450381679389313

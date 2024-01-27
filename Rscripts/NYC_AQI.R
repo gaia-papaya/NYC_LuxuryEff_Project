@@ -6,8 +6,12 @@ library(sf)
 library(tidyverse)
 
 # This code loops through a folder with shape files (of NYC parks), 
-# creates a buffer around each, then clips to a raster
-# Rasters used here are from CDC Social Vulnerability Index (2018) aligned to U.S. Census grids
+# creates a buffer around each, then clips to a raster of air quality & socioeconomic landscape
+# Rasters used here are fromNYC open data air pollution: https://data.cityofnewyork.us/Environment/NYCCAS-Air-Pollution-Rasters/q68s-8qxv
+
+#OUTFILE : "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/AQI_parks.csv"
+
+# SKIP TO "READ IN AQI PARKS DATA" SECTION UNLESS EDITING #
 
 # Created Dec 2023 by Valentina Alaasam
 
@@ -17,7 +21,7 @@ library(tidyverse)
 
 #Set wd to whatever folder contains the folder that contains the shape files
 #setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Buffers/Differences/EPSG_5070")
-setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/ParkShapeFiles_Raf2")
+setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/ParkShapeFiles")
 
 #Get the shapefile names from the shapefile folder
 shapefile_list <- list.files(pattern="\\.shp")  #folder with all files is named "Files"
@@ -286,7 +290,7 @@ AQI_data <- left_join(AQI_data, NO_df,  by = c("x", "y", "park"))
 AQI_data <- left_join(AQI_data, NO2_df,  by = c("x", "y", "park"))
 AQI_data <- left_join(AQI_data, O3_df,  by = c("x", "y", "park"))
 
-AQI_parks <- write_csv(AQI_data, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/AQI_parks.csv")
+#AQI_parks <- write_csv(AQI_data, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/AQI_parks.csv")
 
 
 ################################.

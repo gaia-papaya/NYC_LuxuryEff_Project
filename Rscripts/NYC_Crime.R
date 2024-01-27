@@ -5,9 +5,22 @@ library(sf)
 library(tidyverse)
 library(readxl)
 
+#This script summarizes reported CRIME in NYC parks of interest, and combines with SVI data
+#SVI data is output of Rscript NYC_CencusAnalysis.R ("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/SVI_df.csv")
+#Created Dec 2023 by Valentina Alaasam
+
+
+## First, cleans up raw NYC Crime data per park for 2021-2023 (NYC Open data)
+## OUTFILE: crime <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/Crime_files/crimeNYC_21_23.csv")
+
+## Next, subsets and summarizes this data per park & includes park size (acres)
+## OUTFILE: "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/park_crime_21_23.csv")
+
+## SKIP TO "READ IN PARK CRIME DATA" SECTION UNLESS EDITING
+
 
 ######################################.
-#### Proccess & merge raw files   ####
+#### _Proccess & merge raw files   ####
 ######################################.
 
 
@@ -43,10 +56,10 @@ for (i in 1:length(crime_list)){
 
 crime_data <- data.table::rbindlist(outlist)
 
-write_csv(crime_data, "crimeNYC_21_23.csv")
+#write_csv(crime_data, "crimeNYC_21_23.csv")
 
 ##########################################.
-#### Read in data - Select for parks  ####
+#### _Read in data - Select for parks  ####
 ##########################################.
 
 #read in data
@@ -86,7 +99,13 @@ park_crime_21_23 <- park_crime %>% group_by(Park, Borough, Acres) %>%
 
 
 #write_csv(park_crime_21_23, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/park_crime_21_23.csv")
-#read in park specific data
+
+
+#################################.
+#### READ IN PARK CRIME DATA ####
+#################################.
+
+
 #park_crime_21_23 <- readcsv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/park_crime_21_23.csv")
 
 
