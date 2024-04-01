@@ -66,7 +66,7 @@ crime_data <- data.table::rbindlist(outlist)
 crime <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/Crime_files/crimeNYC_21_23.csv")
 
 
-park_crime <- crime_data[which(PARK=="PELHAM BAY PARK" | 
+park_crime <- crime[which(PARK=="PELHAM BAY PARK" | 
                            PARK=="VAN CORTLANDT PARK" |
                            PARK=="CROTONA PARK" |
                            PARK=="HIGHBRIDGE PARK BRONX SIDE" |
@@ -76,6 +76,17 @@ park_crime <- crime_data[which(PARK=="PELHAM BAY PARK" |
                            PARK=="MORNINGSIDE PARK" |
                            PARK=="VAN CORTLANDT PARK" |
                            PARK=="CENTRAL PARK"),]
+
+park_crime <- crime %>% filter(PARK=="PELHAM BAY PARK" | 
+                                 PARK=="VAN CORTLANDT PARK" |
+                                 PARK=="CROTONA PARK" |
+                                 PARK=="HIGHBRIDGE PARK BRONX SIDE" |
+                                 PARK=="HIGHBRIDGE PARK MANHATTAN SIDE" |
+                                 PARK=="INWOOD HILL PARK" |
+                                 PARK=="SOUNDVIEW PARK" |
+                                 PARK=="MORNINGSIDE PARK" |
+                                 PARK=="VAN CORTLANDT PARK" |
+                                 PARK=="CENTRAL PARK")
 
 #Cleanup
 park_crime$`SIZE (ACRES)` <- signif(park_crime$`SIZE (ACRES)`, digits = 3) #standardize acre numbers
@@ -106,7 +117,7 @@ park_crime_21_23 <- park_crime %>% group_by(Park, Borough, Acres) %>%
 #################################.
 
 
-#park_crime_21_23 <- readcsv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/park_crime_21_23.csv")
+park_crime_21_23 <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/park_crime_21_23.csv")
 
 
 #make long
@@ -124,7 +135,7 @@ park_crime_21_23_long <- park_crime_21_23 %>%
 park_crime_21_23_long$crime_per_acre <- park_crime_21_23_long$crime_total/park_crime_21_23_long$Acres
 
 #Add SVI
-cencus_data <- read.csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/SVI_df.csv")
+cencus_data <- read.csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/SVI_df.csv")
     #merge park names
     unique(park_crime_21_23_long$Park)
     unique(cencus_data$park) 

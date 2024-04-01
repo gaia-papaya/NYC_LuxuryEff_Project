@@ -11,7 +11,7 @@ library(tidyverse)
 
 #OUTFILE : "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/AQI_parks.csv"
 
-# SKIP TO "READ IN AQI PARKS DATA" SECTION UNLESS EDITING #
+# SKIP TO LINE 300 "READ IN AQI PARKS DATA" SECTION UNLESS EDITING #
 
 # Created Dec 2023 by Valentina Alaasam
 

@@ -1,7 +1,7 @@
 
 library(data.table)
 library(raster)
-library(rgdal)
+library(rgdax)
 library(sf)
 library(tidyverse)
 library(dplyr)
@@ -143,7 +143,7 @@ richness_df <- parktrees %>%
   
 
 #Add SVI
-cencus_data <- read.csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/SVI_df.csv")
+cencus_data <- read.csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/SVI_df.csv")
 cencus_data_summary<-cencus_data %>% group_by(park) %>%
   summarise(SVI=mean(SVI), SocioEco=mean(SocioEco), Minority=mean(Minority))
 cencus_data_summary$park[which(cencus_data_summary$park=="Inwood")]<-"InwoodHill"
