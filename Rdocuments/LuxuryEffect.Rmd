@@ -1,1 +1,19 @@
 Hey! this is the R markdown file for the Luxury effect project. Feel free to use this as a notebook where to take notes/write and make some cool plots/code! HOWEVER, try not to fit all your code in here, it helps your fellow programmers better understand your workflow if its compartmentalized :3
+
+###Bird Diversity Plots
+```{r}
+CleanBirdSummary <- CleanBirdData %>% 
+    filter(Merlin != T & is.na(SpCount) != T) %>% 
+  mutate(SpCount = case_when(SpCount == "<5" | SpCount == ">5" ~ 5,
+                             SpCount == ">10" ~10,
+                             SpCount == "" ~ 1,
+                             .default = as.numeric(SpCount)),
+         SpCount = as.numeric(SpCount)) %>% 
+  group_by(Site, family) %>% 
+  summarise(SpCount = sum(SpCount, na.rm = T))
+
+ggplot(CleanBirdSummary, aes(x = family, y = SpCount, fill = family)) +
+  geom_col() +
+  facet_wrap(~Site)
+```
+
