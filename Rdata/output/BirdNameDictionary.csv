@@ -1,118 +1,118 @@
-"","order","family","genus","species","commonNames"
-"1","Passeriformes","Passeridae","Passer","Passer domesticus","house sparrow"
-"2","Piciformes","Picidae","Dryobates","Dryobates pubescens","downy woodpecker"
-"3","Passeriformes","Corvidae","Cyanocitta","Cyanocitta cristata","blue jay"
-"4","Passeriformes","Turdidae","Turdus","Turdus migratorius","american robin"
-"5","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis","white throated sparrow"
-"6","Passeriformes","Passerellidae","Junco","Junco hyemalis","dark eyed junco"
-"7","Passeriformes","Fringillidae","Haemorhous","Haemorhous mexicanus","house finch"
-"8","Passeriformes","Mimidae","Mimus","Mimus polyglottos","northern mockingbird"
-"9","Passeriformes","Sturnidae","Sturnus","Sturnus vulgaris","european starling"
-"10","Passeriformes","Fringillidae","Spinus","Spinus tristis","american goldfinch"
-"11","Anseriformes","Anatidae","Anas","Anas platyrhynchos","mallard"
-"12","Passeriformes","Passerellidae","Melospiza","Melospiza melodia","song sparrow"
-"13","Anseriformes","Anatidae","Cairina","Cairina moschata","muscovy duck"
-"14","Piciformes","Picidae","Colaptes","Colaptes auratus","northern flicker"
-"15","Columbiformes","Columbidae","Columba","Columba livia","rock pigeon"
-"16","Gruiformes","Rallidae","Fulica","Fulica americana","american coot"
-"17","Anseriformes","Anatidae","Spatula","Spatula clypeata","northern shoveler"
-"18","Anseriformes","Anatidae","Branta","Branta canadensis","canada goose"
-"19","Anseriformes","Anatidae","Oxyura","Oxyura jamaicensis","ruddy duck"
-"20","Piciformes","Picidae","Melanerpes","Melanerpes carolinus","red bellied woodpecker"
-"21","Passeriformes","Paridae","Poecile","Poecile atricapillus","black capped chickadee"
-"22","Passeriformes","Paridae","Baeolophus","Baeolophus bicolor","tufted titmouse"
-"23","Passeriformes","Passerellidae","Passerella","Passerella iliaca","fox sparrow"
-"24","Passeriformes","Cardinalidae","Cardinalis","Cardinalis cardinalis","northern cardinal"
-"25","Columbiformes","Columbidae","Zenaida","Zenaida macroura","mourning dove"
-"26","Anseriformes","Anatidae","Anas","Anas carolinensis","green winged teal"
-"27","Accipitriformes","Accipitridae","Buteo","Buteo jamaicensis","red tailed hawk"
-"28","Piciformes","Picidae","Sphyrapicus","Sphyrapicus varius","yellow bellied sapsucker"
-"29","Passeriformes","Mimidae","Dumetella","Dumetella carolinensis","gray catbird"
-"30","Passeriformes","Passerellidae","Spizella","Spizella passerina","chipping sparrow"
-"31","Passeriformes","Corvidae","Corvus","Corvus brachyrhynchos","american crow"
-"32","Passeriformes","Parulidae","Mniotilta","Mniotilta varia","black and white warbler"
-"33","Passeriformes","Tyrannidae","Sayornis","Sayornis phoebe","eastern phoebe"
-"34","Passeriformes","Parulidae","Parkesia","Parkesia noveboracensis","northern waterthrush"
-"35","Pelecaniformes","Ardeidae","Ardea","Ardea herodias","great blue heron"
-"36","Passeriformes","Parulidae","Geothlypis","Geothlypis trichas","common yellowthroat"
-"37","Passeriformes","Icteridae","Quiscalus","Quiscalus quiscula","common grackle"
-"38","Anseriformes","Anatidae","Anas","Anas rubripes","american black duck"
-"39","Passeriformes","Parulidae","Setophaga","Setophaga coronata","yellow rumped warbler"
-"40","Passeriformes","Regulidae","Regulus","Regulus satrapa","golden crowned kinglet"
-"41","Anseriformes","Anatidae","Aix","Aix sponsa","wood duck"
-"42","Coraciiformes","Cerylidae","Megaceryle","Megaceryle alcyon","belted kingfisher"
-"43","Passeriformes","Icteridae","Agelaius","Agelaius phoeniceus","red winged blackbird"
-"44","Passeriformes","Parulidae","Setophaga","Setophaga pinus","pine warbler"
-"45","Piciformes","Picidae","Picoides","Picoides villosus","hairy woodpecker"
-"46","Galliformes","Phasianidae","Meleagris","Meleagris gallopavo","wild turkey"
-"47","Passeriformes","Certhiidae","Thryothorus","Thryothorus ludovicianus","carolina wren"
-"48","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla","ovenbird"
-"49","Passeriformes","Parulidae","Setophaga","Setophaga caerulescens","black throated blue warbler"
-"50","Passeriformes","Turdidae","Catharus","Catharus fuscescens","veery"
-"51","Charadriiformes","Laridae","Larus","Larus argentatus","herring gull"
-"52","Charadriiformes","Laridae","Larus","Larus marinus","great black backed gull"
-"53","Suliformes","Phalacrocoracidae","Phalacrocorax","Phalacrocorax auritus","double crested cormorant"
-"54","Passeriformes","Bombycillidae","Bombycilla","Bombycilla cedrorum","cedar waxwing"
-"55","Anseriformes","Anatidae","Bucephala","Bucephala albeola","bufflehead"
-"56","Anseriformes","Anatidae","Lophodytes","Lophodytes cucullatus","hooded merganser"
-"57","Charadriiformes","Laridae","Larus","Larus delawarensis","ring billed gull"
-"58","Gaviiformes","Gaviidae","Gavia","Gavia stellata","red throated loon"
-"59","Anseriformes","Anatidae","Mareca","Mareca strepera","gadwall"
-"60","Anseriformes","Anatidae","Aythya","Aythya affinis","lesser scaup"
-"61","Anseriformes","Anatidae","Aythya","Aythya marila","greater scaup"
-"62","Falconiformes","Falconidae","Falco","Falco sparverius","american kestrel"
-"63","Strigiformes","Strigidae","Bubo","Bubo virginianus","great horned owl"
-"64","Accipitriformes","Cathartidae","Cathartes","Cathartes aura","turkey vulture"
-"65","Gaviiformes","Gaviidae","Gavia","Gavia immer","common loon"
-"66","Accipitriformes","Accipitridae","Haliaeetus","Haliaeetus leucocephalus","bald eagle"
-"67","Anseriformes","Anatidae","Aythya","Aythya collaris","ring necked duck"
-"68","Falconiformes","Falconidae","Falco","Falco peregrinus","peregrine falcon"
-"69","Anseriformes","Anatidae","Aythya","Aythya americana","redhead"
-"70","Passeriformes","Parulidae","Leiothlypis","Leiothlypis celata","orange crowned warbler"
-"71","Anseriformes","Anatidae","Cygnus","Cygnus olor","mute swan"
-"72","Psittaciformes","Psittacidae","Myiopsitta","Myiopsitta monachus","monk parakeet"
-"73","Pelecaniformes","Ardeidae","Ardea","Ardea alba","great egret"
-"74","Passeriformes","Passerellidae","Spizella","Spizella pusilla","field sparrow"
-"75","Passeriformes","Parulidae","Setophaga","Setophaga palmarum","palm warbler"
-"76","Accipitriformes","Pandionidae","Pandion","Pandion haliaetus","osprey"
-"77","Passeriformes","Tyrannidae","Tyrannus","Tyrannus tyrannus","eastern kingbird"
-"78","Passeriformes","Cardinalidae","Piranga","Piranga olivacea","scarlet tanager"
-"79","Passeriformes","Parulidae","Setophaga","Setophaga americana","northern parula"
-"80","Passeriformes","Parulidae","Leiothlypis","Leiothlypis ruficapilla","nashville warbler"
-"81","Passeriformes","Parulidae","Setophaga","Setophaga petechia","yellow warbler"
-"82","Apodiformes","Apodidae","Chaetura","Chaetura pelagica","chimney swift"
-"83","Charadriiformes","Scolopacidae","Tringa","Tringa solitaria","solitary sandpiper"
-"84","Passeriformes","Hirundinidae","Hirundo","Hirundo rustica","barn swallow"
-"85","Passeriformes","Icteridae","Euphagus","Euphagus carolinus","rusty blackbird"
-"86","Passeriformes","Turdidae","Sialia","Sialia sialis","eastern bluebird"
-"87","Passeriformes","Fringillidae","Spinus","Spinus pinus","pine siskin"
-"88","Anseriformes","Anatidae","Spatula","Spatula discors","blue winged teal"
-"89","Charadriiformes","Scolopacidae","Scolopax","Scolopax minor","american woodcock"
-"90","Passeriformes","Fringillidae","Haemorhous","Haemorhous purpureus","purple finch"
-"91","Passeriformes","Corvidae","Corvus","Corvus corax","common raven"
-"92","Passeriformes","Vireonidae","Vireo","Vireo gilvus","warbling vireo"
-"93","Passeriformes","Cardinalidae","Pheucticus","Pheucticus ludovicianus","rose breasted grosbeak"
-"94","Passeriformes","Parulidae","Setophaga","Setophaga pensylvanica","chestnut sided warbler"
-"95","Passeriformes","Parulidae","Setophaga","Setophaga striata","blackpoll warbler"
-"96","Passeriformes","Turdidae","Catharus","Catharus guttatus","hermit thrush"
-"97","Passeriformes","Parulidae","Setophaga","Setophaga ruticilla","american redstart"
-"98","Passeriformes","Sittidae","Sitta","Sitta carolinensis","white breasted nuthatch"
-"99","Passeriformes","Turdidae","Catharus","Catharus ustulatus","swainsons thrush"
-"100","Accipitriformes","Accipitridae","Accipiter","Accipiter cooperii","coopers hawk"
-"101","Anseriformes","Anatidae","Mergus","Mergus serrator","red breasted merganser"
-"102","Carnivora","Felidae","Felis","Felis catus","feral cat"
-"103","Passeriformes","Turdidae","Hylocichla","Hylocichla mustelina","wood thrush"
-"104","Passeriformes","Passerellidae","Melospiza","Melospiza georgiana","swamp sparrow"
-"105","Charadriiformes","Charadriidae","Charadrius","Charadrius vociferus","killdeer"
-"106","Passeriformes","Corvidae","Corvus","Corvus ossifragus","fish crow"
-"107","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia leucophrys","white crowned sparrow"
-"108","Passeriformes","Icteridae","Icterus","Icterus galbula","baltimore oriole"
-"109","Passeriformes","Vireonidae","Vireo","Vireo olivaceus","red eyed vireo"
-"110","Passeriformes","Certhiidae","Certhia","Certhia americana","brown creeper"
-"111","Passeriformes","Regulidae","Regulus","Regulus calendula","ruby crowned kinglet"
-"112","Passeriformes","Certhiidae","Troglodytes","Troglodytes hiemalis","winter wren"
-"113","Podicipediformes","Podicipedidae","Podilymbus","Podilymbus podiceps","pied billed grebe"
-"114","Anseriformes","Anatidae","Branta","Branta bernicla","brant"
-"115","Passeriformes","Passerellidae","Pipilo","Pipilo erythrophthalmus","eastern towhee"
-"116","Passeriformes","Cardinalidae","Passerina","Passerina caerulea","blue grosbeak"
-"117","Passeriformes","Icteridae","Molothrus","Molothrus ater","brownheaded cowbird"
+order,family,genus,species,commonNames
+Passeriformes,Passeridae,Passer,Passer domesticus,house sparrow
+Piciformes,Picidae,Dryobates,Dryobates pubescens,downy woodpecker
+Passeriformes,Corvidae,Cyanocitta,Cyanocitta cristata,blue jay
+Passeriformes,Turdidae,Turdus,Turdus migratorius,american robin
+Passeriformes,Turdidae,Catharus,Catharus guttatus,hermit thrush
+Passeriformes,Passerellidae,Zonotrichia,Zonotrichia albicollis,white throated sparrow
+Passeriformes,Passerellidae,Junco,Junco hyemalis,dark eyed junco
+Passeriformes,Fringillidae,Haemorhous,Haemorhous mexicanus,house finch
+Passeriformes,Mimidae,Mimus,Mimus polyglottos,northern mockingbird
+Passeriformes,Sturnidae,Sturnus,Sturnus vulgaris,european starling
+Passeriformes,Fringillidae,Spinus,Spinus tristis,american goldfinch
+Anseriformes,Anatidae,Anas,Anas platyrhynchos,mallard
+Passeriformes,Passerellidae,Melospiza,Melospiza melodia,song sparrow
+Anseriformes,Anatidae,Cairina,Cairina moschata,muscovy duck
+Piciformes,Picidae,Colaptes,Colaptes auratus,northern flicker
+Columbiformes,Columbidae,Columba,Columba livia,rock pigeon
+Gruiformes,Rallidae,Fulica,Fulica americana,american coot
+Anseriformes,Anatidae,Spatula,Spatula clypeata,northern shoveler
+Anseriformes,Anatidae,Branta,Branta canadensis,canada goose
+Anseriformes,Anatidae,Oxyura,Oxyura jamaicensis,ruddy duck
+Piciformes,Picidae,Melanerpes,Melanerpes carolinus,red bellied woodpecker
+Passeriformes,Paridae,Poecile,Poecile atricapillus,black capped chickadee
+Passeriformes,Paridae,Baeolophus,Baeolophus bicolor,tufted titmouse
+Passeriformes,Passerellidae,Passerella,Passerella iliaca,fox sparrow
+Passeriformes,Cardinalidae,Cardinalis,Cardinalis cardinalis,northern cardinal
+Columbiformes,Columbidae,Zenaida,Zenaida macroura,mourning dove
+Anseriformes,Anatidae,Anas,Anas carolinensis,green winged teal
+Accipitriformes,Accipitridae,Buteo,Buteo jamaicensis,red tailed hawk
+Piciformes,Picidae,Sphyrapicus,Sphyrapicus varius,yellow bellied sapsucker
+Passeriformes,Mimidae,Dumetella,Dumetella carolinensis,gray catbird
+Passeriformes,Passerellidae,Spizella,Spizella passerina,chipping sparrow
+Passeriformes,Corvidae,Corvus,Corvus brachyrhynchos,american crow
+Passeriformes,Parulidae,Mniotilta,Mniotilta varia,black and white warbler
+Passeriformes,Tyrannidae,Sayornis,Sayornis phoebe,eastern phoebe
+Passeriformes,Parulidae,Parkesia,Parkesia noveboracensis,northern waterthrush
+Pelecaniformes,Ardeidae,Ardea,Ardea herodias,great blue heron
+Passeriformes,Parulidae,Geothlypis,Geothlypis trichas,common yellowthroat
+Passeriformes,Icteridae,Quiscalus,Quiscalus quiscula,common grackle
+Anseriformes,Anatidae,Anas,Anas rubripes,american black duck
+Passeriformes,Parulidae,Setophaga,Setophaga coronata,yellow rumped warbler
+Passeriformes,Regulidae,Regulus,Regulus satrapa,golden crowned kinglet
+Anseriformes,Anatidae,Aix,Aix sponsa,wood duck
+Coraciiformes,Cerylidae,Megaceryle,Megaceryle alcyon,belted kingfisher
+Passeriformes,Icteridae,Agelaius,Agelaius phoeniceus,red winged blackbird
+Passeriformes,Parulidae,Setophaga,Setophaga pinus,pine warbler
+Piciformes,Picidae,Picoides,Picoides villosus,hairy woodpecker
+Galliformes,Phasianidae,Meleagris,Meleagris gallopavo,wild turkey
+Passeriformes,Certhiidae,Thryothorus,Thryothorus ludovicianus,carolina wren
+Passeriformes,Parulidae,Seiurus,Seiurus aurocapilla,ovenbird
+Passeriformes,Parulidae,Setophaga,Setophaga caerulescens,black throated blue warbler
+Passeriformes,Turdidae,Catharus,Catharus fuscescens,veery
+Charadriiformes,Laridae,Larus,Larus argentatus,herring gull
+Charadriiformes,Laridae,Larus,Larus marinus,great black backed gull
+Suliformes,Phalacrocoracidae,Phalacrocorax,Phalacrocorax auritus,double crested cormorant
+Passeriformes,Bombycillidae,Bombycilla,Bombycilla cedrorum,cedar waxwing
+Anseriformes,Anatidae,Bucephala,Bucephala albeola,bufflehead
+Anseriformes,Anatidae,Lophodytes,Lophodytes cucullatus,hooded merganser
+Charadriiformes,Laridae,Larus,Larus delawarensis,ring billed gull
+Gaviiformes,Gaviidae,Gavia,Gavia stellata,red throated loon
+Anseriformes,Anatidae,Mareca,Mareca strepera,gadwall
+Anseriformes,Anatidae,Aythya,Aythya affinis,lesser scaup
+Anseriformes,Anatidae,Aythya,Aythya marila,greater scaup
+Falconiformes,Falconidae,Falco,Falco sparverius,american kestrel
+Strigiformes,Strigidae,Bubo,Bubo virginianus,great horned owl
+Accipitriformes,Cathartidae,Cathartes,Cathartes aura,turkey vulture
+Gaviiformes,Gaviidae,Gavia,Gavia immer,common loon
+Accipitriformes,Accipitridae,Haliaeetus,Haliaeetus leucocephalus,bald eagle
+Anseriformes,Anatidae,Aythya,Aythya collaris,ring necked duck
+Falconiformes,Falconidae,Falco,Falco peregrinus,peregrine falcon
+Anseriformes,Anatidae,Aythya,Aythya americana,redhead
+Charadriiformes,Charadriidae,Charadrius,Charadrius vociferus,killdeer
+Passeriformes,Parulidae,Leiothlypis,Leiothlypis celata,orange crowned warbler
+Anseriformes,Anatidae,Cygnus,Cygnus olor,mute swan
+Psittaciformes,Psittacidae,Myiopsitta,Myiopsitta monachus,monk parakeet
+Pelecaniformes,Ardeidae,Ardea,Ardea alba,great egret
+Passeriformes,Passerellidae,Spizella,Spizella pusilla,field sparrow
+Passeriformes,Parulidae,Setophaga,Setophaga palmarum,palm warbler
+Accipitriformes,Pandionidae,Pandion,Pandion haliaetus,osprey
+Passeriformes,Tyrannidae,Tyrannus,Tyrannus tyrannus,eastern kingbird
+Passeriformes,Cardinalidae,Piranga,Piranga olivacea,scarlet tanager
+Passeriformes,Parulidae,Setophaga,Setophaga americana,northern parula
+Passeriformes,Icteridae,Icterus,Icterus galbula,baltimore oriole
+Passeriformes,Parulidae,Leiothlypis,Leiothlypis ruficapilla,nashville warbler
+Passeriformes,Parulidae,Setophaga,Setophaga petechia,yellow warbler
+Apodiformes,Apodidae,Chaetura,Chaetura pelagica,chimney swift
+Charadriiformes,Scolopacidae,Tringa,Tringa solitaria,solitary sandpiper
+Passeriformes,Hirundinidae,Hirundo,Hirundo rustica,barn swallow
+Passeriformes,Icteridae,Euphagus,Euphagus carolinus,rusty blackbird
+Passeriformes,Turdidae,Sialia,Sialia sialis,eastern bluebird
+Passeriformes,Fringillidae,Spinus,Spinus pinus,pine siskin
+Anseriformes,Anatidae,Spatula,Spatula discors,blue winged teal
+Charadriiformes,Scolopacidae,Scolopax,Scolopax minor,american woodcock
+Passeriformes,Fringillidae,Haemorhous,Haemorhous purpureus,purple finch
+Passeriformes,Corvidae,Corvus,Corvus corax,common raven
+Passeriformes,Vireonidae,Vireo,Vireo gilvus,warbling vireo
+Passeriformes,Cardinalidae,Pheucticus,Pheucticus ludovicianus,rose breasted grosbeak
+Passeriformes,Parulidae,Setophaga,Setophaga pensylvanica,chestnut sided warbler
+Passeriformes,Vireonidae,Vireo,Vireo olivaceus,red eyed vireo
+Passeriformes,Parulidae,Setophaga,Setophaga striata,blackpoll warbler
+Passeriformes,Parulidae,Setophaga,Setophaga ruticilla,american redstart
+Passeriformes,Sittidae,Sitta,Sitta carolinensis,white breasted nuthatch
+Passeriformes,Turdidae,Catharus,Catharus ustulatus,swainsons thrush
+Accipitriformes,Accipitridae,Accipiter,Accipiter cooperii,coopers hawk
+Anseriformes,Anatidae,Mergus,Mergus serrator,red breasted merganser
+Carnivora,Felidae,Felis,Felis catus,feral cat
+Passeriformes,Turdidae,Hylocichla,Hylocichla mustelina,wood thrush
+Passeriformes,Passerellidae,Melospiza,Melospiza georgiana,swamp sparrow
+Passeriformes,Corvidae,Corvus,Corvus ossifragus,fish crow
+Passeriformes,Passerellidae,Zonotrichia,Zonotrichia leucophrys,white crowned sparrow
+Passeriformes,Certhiidae,Certhia,Certhia americana,brown creeper
+Passeriformes,Regulidae,Regulus,Regulus calendula,ruby crowned kinglet
+Passeriformes,Certhiidae,Troglodytes,Troglodytes hiemalis,winter wren
+Podicipediformes,Podicipedidae,Podilymbus,Podilymbus podiceps,pied billed grebe
+Anseriformes,Anatidae,Branta,Branta bernicla,brant
+Passeriformes,Passerellidae,Pipilo,Pipilo erythrophthalmus,eastern towhee
+Passeriformes,Cardinalidae,Passerina,Passerina caerulea,blue grosbeak
+Passeriformes,Icteridae,Molothrus,Molothrus ater,brownheaded cowbird

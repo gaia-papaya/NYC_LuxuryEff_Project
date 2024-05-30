@@ -97,17 +97,13 @@ theme_gaia = function(base_size =12, theme = "light"){
 
 ###Bird Diversity Plots
 ```{r}
-CleanBirdSummary <- CleanBirdData %>% 
+CleanBirdSummary1 <- CleanBirdData %>% 
     filter(Merlin != T & is.na(SpCount) != T) %>% 
-  mutate(SpCount = case_when(SpCount == "<5" | SpCount == ">5" ~ 5,
-                             SpCount == ">10" ~10,
-                             SpCount == "" ~ 1,
-                             .default = as.numeric(SpCount)),
-         SpCount = as.numeric(SpCount)) %>% 
+  mutate() %>% 
   group_by(Site, order) %>% 
   summarise(SpCount = sum(SpCount, na.rm = T))
 
-ggplot(filter(CleanBirdSummary, is.na(order) == F), aes(x = reorder_within(order, SpCount, Site), y = SpCount, fill = order)) +
+ggplot(filter(CleanBirdSummary1, is.na(order) == F), aes(x = reorder_within(order, SpCount, Site), y = SpCount, fill = order)) +
   geom_col() +
   facet_wrap(~Site, scales = "free_x", nrow = 2) +
   theme_gaia(base_size = 16)+
@@ -117,5 +113,24 @@ ggplot(filter(CleanBirdSummary, is.na(order) == F), aes(x = reorder_within(order
   labs(x = "Order name", y = "Counts",
        title = "Abundance of Orders at each Site")+
   scale_fill_viridis_d()
+```
+
+###Dog plots
+```{r}
+DogLabels <- CleanBirdDogSummary %>% 
+  group_by(Site) %>% 
+  summarise(label = sum(dogCountTotal))
+
+ggplot(CleanBirdDogSummary, aes(x = reorder(Site, perDogLeashed), y = perDogLeashed, fill = Site)) +
+  geom_boxplot(outliers = FALSE)+
+  geom_point(shape = 21, size = 2) +
+  geom_text(data = DogLabels, aes(x= Site, y = .1, label = paste("n= \n", label)))+
+  
+  theme_gaia(base_size = 16)+
+  theme(axis.text.x =  element_text(angle = 90, vjust = 0.5)) +
+  scale_fill_viridis_d() +
+  labs(x = "Sites", y = "% Dogs Leashed",
+       title = "Percentage of Dogs Leashed across Parks") +
+  guides(fill = "none")
 ```
 
