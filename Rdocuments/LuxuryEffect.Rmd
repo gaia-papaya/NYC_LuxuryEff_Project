@@ -1,5 +1,100 @@
 Hey! this is the R markdown file for the Luxury effect project. Feel free to use this as a notebook where to take notes/write and make some cool plots/code! HOWEVER, try not to fit all your code in here, it helps your fellow programmers better understand your workflow if its compartmentalized :3
 
+###plotting source
+```{r}
+require(ggpubr)
+require(tidytext)
+theme_gaia = function(base_size =12, theme = "light"){
+  #set color scheme based on theme
+  if(theme == "light") {
+    mainCol = "white"
+    contrastCol = "black"
+    accentCol ="#a8a8a8"
+    accentCol2 =  "#e0e0e0" 
+    
+  } else if(theme =="dark") {
+    mainCol = "black"
+    contrastCol = "white"
+    accentCol = "#333333"
+    accentCol2 = "#0f0f0f"
+  }
+  
+  #idk what this does but ik it makes it work good :)
+  theme_pubr(base_family="sans") %+replace%
+    theme(
+      #plots
+      panel.background  = element_rect(fill = accentCol2),
+      
+      #entire plot
+      plot.background = element_rect(fill= mainCol, colour=NA), 
+      
+      #Axes
+      axis.text = element_text(size = base_size*0.85,
+                               colour = contrastCol),
+      
+      axis.title = element_text(size = base_size * 1.2,
+                                colour = contrastCol),
+      
+      axis.line = element_line( color = contrastCol),
+      
+      #Legend
+      legend.background = element_rect(fill= mainCol,
+                                       colour=NA),
+      
+      legend.key = element_rect(fill="transparent",
+                                colour=NA),
+      
+      legend.text = element_text(size=base_size * 0.7, 
+                                 colour = contrastCol),
+      
+      legend.title = element_text(size = base_size * 0.8,
+                                  colour = contrastCol,
+                                  face = "bold"),
+      
+      legend.spacing = unit(1, "cm"),
+      
+      legend.key.width = unit(1, "cm"),
+      
+      
+      #title 
+      plot.title = element_text(color = contrastCol,
+        size = base_size * 1.25,
+        face = "bold", 
+        hjust = 0.5,
+        vjust = 1),
+      
+      plot.title.position = "panel",
+      
+      
+      #subtitles
+      plot.subtitle = element_text(
+        size = base_size * 0.9,
+        vjust = 1),
+      
+      
+      #caption
+      plot.caption =  element_text(
+        size = base_size*0.75,
+        hjust = 0.5,
+        color = contrastCol),
+      
+      plot.caption.position = "panel",
+      
+      
+      #facets
+      strip.text = element_text(size = 0.75*base_size,
+                                colour = contrastCol),
+      
+      strip.background = element_rect(fill = accentCol,
+                                      color = contrastCol)
+      
+    )
+  
+}
+```
+
+
+
 ###Bird Diversity Plots
 ```{r}
 CleanBirdSummary <- CleanBirdData %>% 
@@ -9,11 +104,18 @@ CleanBirdSummary <- CleanBirdData %>%
                              SpCount == "" ~ 1,
                              .default = as.numeric(SpCount)),
          SpCount = as.numeric(SpCount)) %>% 
-  group_by(Site, family) %>% 
+  group_by(Site, order) %>% 
   summarise(SpCount = sum(SpCount, na.rm = T))
 
-ggplot(CleanBirdSummary, aes(x = family, y = SpCount, fill = family)) +
+ggplot(filter(CleanBirdSummary, is.na(order) == F), aes(x = reorder_within(order, SpCount, Site), y = SpCount, fill = order)) +
   geom_col() +
-  facet_wrap(~Site)
+  facet_wrap(~Site, scales = "free_x", nrow = 2) +
+  theme_gaia(base_size = 16)+
+  theme(axis.text.x =  element_text(angle = 90, vjust = 0.5)) +
+  guides(fill = "none")+
+  scale_x_reordered()+
+  labs(x = "Order name", y = "Counts",
+       title = "Abundance of Orders at each Site")+
+  scale_fill_viridis_d()
 ```
 
