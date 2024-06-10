@@ -18,17 +18,30 @@ library(lme4)
 ## OUTPUT (EBIRD): "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/ebird_2019-23.csv"
 ## OUTPUT (COMBO): "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/inat_ebird_df.csv"
 
-#### SKIP TO 'SHORTCUT' SECTION UNLESS EDITING
 
-#this section combines data with park size (from CRIME data): "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/park_crime_21_23.csv") 
-# and SVI from NY_CencusAnalysis.R: "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/SVI_df.csv"
-  
+## INPUTS: 
+
+## Social Vulnerability data (CDC cencus collected), created in NYC_CencusAnalysis.R: 
+##     cencus_data <- read.csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/SVI_df.csv")
+
+## Park Size (extracted from "crime" dataset in NYC Open Data, created in NYC_Crime.R:
+##     crime <- read_csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/park_crime_21_23.csv") 
+
+## If raw data is already processed, skip down to SHORTCUT and read in cleane combined data
+#"~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/inat_ebird_df.csv"
 
 
 
-######################################.
-#### Proccess raw iNAT downloads #####
-######################################.
+
+#### SKIP TO 'SHORTCUT' SECTION UNLESS EDITING/PROCESSING RAW DATA
+
+
+#### Data Processing #####
+
+
+###########################################.
+###### _Process raw iNAT downloads #######
+###########################################.
 
 setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/iNaturalist")
 
@@ -91,9 +104,9 @@ inat_df$park[which(inat_df$park=="PelhamBay")]<-"PelhamBaySouth"
 write_csv(inat_df, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/inat_2019-23.csv")
 
 
-#######################################.
-#### Proccess raw ebird downloads #####
-#######################################.
+##########################################.
+###### _Process raw ebird downloads #######
+##########################################.
 
 setwd("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/eBird")
 
@@ -148,9 +161,9 @@ ebird_df<-ebird_df[which(ebird_df$user_login!="anubesh"),]
 
 
 
-##################################.
-#### Read & Combine datasets #####
-##################################.
+#######################################.
+###### _Read & Combine datasets #######
+#######################################.
 
 
 #read in inat and ebird and tree diversity dfs
@@ -184,7 +197,8 @@ for (j in nrow(inat_num_events)){
   }
 }
 
-##### Clip to parks (for some where we only sample a portion) #####
+##### _Clip to parks  #####
+#(for some where we only sample a portion of a park, specific shape file needed)
 
 # List all shapefiles in the directory
 #shapefile_list <- list.files(path = "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/ParkShapeFiles_Raf2", 
@@ -304,7 +318,7 @@ inat_ebird_df$taxon[which(inat_ebird_df$iconic_taxon_name=="Plantae" | inat_ebir
 inat_ebird_df$taxon[which(inat_ebird_df$iconic_taxon_name=="Aves")] <- "Aves"
 
 
-#### _Calculate number of records per park ####
+##### _Calculate number of records per park #####
 effort_df <- inat_ebird_df %>%
   group_by(park, taxon) %>%
   summarize(n=n())
@@ -323,7 +337,7 @@ effort_df$observation_density<-effort_df$n/effort_df$Acres
 
 
 
-#### _Calculate richness  ####
+##### _Calculate richness  #####
 ### also accounting for total observations ###
 
 #by group
@@ -354,7 +368,7 @@ all_richness <- inat_ebird_df %>%
 #all_richness <-rbind(inat_richness, ebird_richness, tree_richness) 
   
 
-#### _Consolidate with other datasets ####
+##### _Consolidate with other datasets #####
 
 #Add SVI and crime data (with size of park)
 cencus_data <- read.csv("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/SVI_df.csv")
