@@ -8,6 +8,7 @@ require(taxize)
 #Dirty Sheet Cleanup----
 #read in bird survey datasheet
 DirtyBirdData <- read.csv("Rdata/Biodiversity/BirdSurveys_2024-05-29.csv") %>% 
+  filter( Site != "CentralPark" & Site != "GreenwoodCemetryPark") %>% #filter out sites we are no longer sampling 
   mutate(Date = as.POSIXct(Date, format ="%Y-%m-%d"), #reformat date
          HumidityPer = as.numeric(str_remove(HumidityPer, "%")), #remove percent sign and reformat to numeric
          UID = row_number(),#add row number as uid
@@ -144,4 +145,13 @@ group_by(Site, Date) %>%
             dogCountTotal = sum(dogOnCount, dogOffCount),
             perDogLeashed = dogOnCount/dogCountTotal) 
   
-  
+#Summary table for bird data
+CleanBirdSummary <- CleanBirdData %>% 
+  group_by(Site, Date) %>% 
+  summarise(across(Researcher1:TimeEnd, unique),
+    across(order:species, ~length(unique(.x)), .names = "{.col}_richness")) #calc richness for taxonomic groups
+
+#how many replicates per site?
+Reps <- CleanBirdData %>% 
+  group_by(Site) %>% 
+  summarise(count = n_distinct(Date))

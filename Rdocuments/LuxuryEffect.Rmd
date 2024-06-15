@@ -112,11 +112,19 @@ ggplot(filter(CleanBirdSummary1, is.na(order) == F), aes(x = reorder_within(orde
   scale_x_reordered()+
   labs(x = "Order name", y = "Counts",
        title = "Abundance of Orders at each Site")+
-  scale_fill_viridis_d()
+  scale_fill_viridis_d() 
+
+ggplot(filter(Richness, Site != "CentralPark" & Site != "GreenwoodCemetryPark"), 
+       aes(x = Date, y = Richness, fill = Site)) +
+  geom_point(shape = 21, size = 2) +
+  theme_gaia(base_size = 16)+
+  scale_fill_viridis_d() +
+  facet_wrap(~Site, ncol = 2)
+  
 ```
 
 ###Dog plots
-```{r}
+```{r} 
 DogLabels <- CleanBirdDogSummary %>% 
   group_by(Site) %>% 
   summarise(label = sum(dogCountTotal))
