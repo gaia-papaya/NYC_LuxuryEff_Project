@@ -1,7 +1,7 @@
 
 library(data.table)
 library(raster)
-library(rgdal)
+library(rgdax)
 library(sf)
 library(tidyverse)
 
@@ -60,8 +60,8 @@ shape_file_names <- shape_file_names %>%
 #import the raster
 ras <- raster("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Rasters/SVI-2018-nad83-geotiff/svi_2018_tract_overall_nad83_nopop.tif")
 
-#this is the distance you want to buffer
-buff_dist <- 500 
+#this is the distance you want to buffer, if using park shape files instead of distances
+#buff_dist <- 500 
 
 #this loop takes each shapefile, buffers it, clips the raster, and them summarizes the data
 outlist <- list()
@@ -77,7 +77,7 @@ for (i in 1:length(shapefile_list)) {
  # buffered_shape <- st_buffer(shp, dist = buff_dist)
   
   # Clip the raster to the buffered shape
-  clipped_raster <- raster::crop(ras, extent(shp))  #this line is for uploading ALREADY BUFFERED shapefiles
+  clipped_raster <- raster::crop(ras, extent(shp))  #this line is for uploading ALREADY BUFFERED / DIFFERENCE shapefiles
   # clipped_raster <- raster::crop(ras, extent(buffered_shape))
 
   #masked_raster <- raster::mask(clipped_raster, shp) #gives all values outside the circle an NA value
@@ -107,7 +107,7 @@ SVI_df <- data.table::rbindlist(outlist)
 ras <- raster("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Rasters/SVI-2018-nad83-geotiff/svi_2018_tract_socioeconomic_nad83_nopop.tif")
 
 #this is the distance you want to buffer
-buff_dist <- 500 
+#buff_dist <- 500 
 
 #this loop takes each shapefile, buffers it, clips the raster, and them summarizes the data
 outlist <- list()
@@ -120,10 +120,10 @@ for (i in 1:length(shapefile_list)) {
   shp <- st_transform(shp, crs = raster::crs(ras))
   
   #create buffer around shape
-  buffered_shape <- st_buffer(shp, dist = buff_dist)
+ # buffered_shape <- st_buffer(shp, dist = buff_dist)
   
   # Clip the raster to the buffered shape
-  clipped_raster <- raster::crop(ras, extent(shp))
+  clipped_raster <- raster::crop(ras, extent(shp))  #this line is for uploading ALREADY BUFFERED / DIFFERENCE shapefiles
   #clipped_raster <- raster::crop(ras, extent(buffered_shape))
   
   #masked_raster <- raster::mask(clipped_raster, shp) #gives all values outside the circle an NA value
@@ -156,7 +156,7 @@ SocioEco_df <- data.table::rbindlist(outlist)
 ras <- raster("~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/GIS/Rasters/SVI-2018-nad83-geotiff/svi_2018_tract_minority_nad83_nopop.tif")
 
 #this is the distance you want to buffer
-buff_dist <- 500 
+#buff_dist <- 500 
 
 #this loop takes each shapefile, buffers it, clips the raster, and them summarizes the data
 outlist <- list()
@@ -169,7 +169,7 @@ for (i in 1:length(shapefile_list)) {
   shp <- st_transform(shp, crs = raster::crs(ras))
   
   #create buffer around shape
-  buffered_shape <- st_buffer(shp, dist = buff_dist)
+ # buffered_shape <- st_buffer(shp, dist = buff_dist)
   
   # Clip the raster to the buffered shape
   clipped_raster <- raster::crop(ras, extent(shp))
@@ -204,7 +204,7 @@ cencus_data <- SVI_df
 cencus_data <- left_join(cencus_data, SocioEco_df,  by = c("x", "y", "park"))
 cencus_data <- left_join(cencus_data, Minority_df,  by = c("x", "y", "park"))
 
-#write_csv(cencus_data, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/SVI_df.csv")
+#write_csv(cencus_data, "~/Documents/Projects/LuxuryNYC/NYC_LuxuryEff_Project/Rdata/output/SVI_df_2024update.csv")
 
 #######################.
 #### READ IN DATA  ####
@@ -221,17 +221,21 @@ vancortlandt="#e8718d"
 soundview="#097d79"
 pelham="#e5b636"
 highbridge="#e77148"
-crotona="#54a82d"
-  
+crotona="#0E8C12"
+forest="#C42832"
+alleypond="#A4B25D"
+prospect="#4C66D1"
+
+colors<-c(morningside, inwood, crotona, forest, highbridge, prospect, alleypond, vancortlandt, soundview, pelham)
+
 
 # SVI
-colors<-c(morningside, inwood, crotona, highbridge, vancortlandt, soundview, pelham)
 
 ggplot(data=SVI_df, aes(x=reorder(park, SVI, FUN=mean), y=SVI, fill=park)) + 
   geom_point()+
-#  geom_violin(aes(x=park, y=SVI))+
+ # geom_violin(aes(x=park, y=SVI))+
   geom_boxplot()+
-  scale_fill_manual(values=colors)+
+  #scale_fill_manual(values=colors)+
   scale_x_discrete(guide = guide_axis(angle = 45))+
   ylab(" ") +
   xlab("")+
@@ -240,7 +244,7 @@ ggplot(data=SVI_df, aes(x=reorder(park, SVI, FUN=mean), y=SVI, fill=park)) +
   theme(
     plot.title = element_text(hjust=0.5)
   )
-ggsave(file="~/Documents/GIS/NY/Images/SVI2018.jpg", width=5, height=7, units="in")
+#ggsave(file="~/Documents/GIS/NY/Images/SVI2018.jpg", width=5, height=7, units="in")
 
 ggplot(data=SVI_df, aes(x=reorder(park, SVI, FUN=mean), y=SVI)) + 
   geom_point()+
@@ -258,14 +262,14 @@ ggplot(data=SVI_df, aes(x=reorder(park, SVI, FUN=mean), y=SVI)) +
   #No High School Diploma
   #No Health Insurance
 
-colors<-c(morningside, inwood, crotona, highbridge, vancortlandt, soundview, pelham)
+colors<-c(morningside, inwood, forest, crotona, highbridge, prospect, alleypond, vancortlandt, soundview, pelham)
 ggplot(data=SocioEco_df, aes(x=reorder(park, SocioEco, FUN=mean), y=SocioEco, fill=park)) + 
  # geom_point()+
   geom_violin(show.legend=FALSE)+
   stat_summary(fun.data = "mean_sdl",  fun.args = list(mult = 1), 
                geom = "pointrange", color = "black", show.legend=FALSE) +
   scale_x_discrete(guide = guide_axis(angle = 45))+
-  scale_fill_manual(values=colors)+
+ # scale_fill_manual(values=colors)+
   xlab("")+
   xlab("") +
   ggtitle("Socioeconomic status") +
@@ -273,7 +277,7 @@ ggplot(data=SocioEco_df, aes(x=reorder(park, SocioEco, FUN=mean), y=SocioEco, fi
   theme(
     plot.title = element_text(hjust=0.5)
   )
-ggsave(file="~/Documents/GIS/NY/Images/SocioEconomics2018.jpg", width=3, height=4, units="in")
+#ggsave(file="~/Documents/GIS/NY/Images/SocioEconomics2018.jpg", width=3, height=4, units="in")
 
 # Minority status
   #Racial & Ethnic Minority Status
